@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    td {
+      text-align: center
+    }
+  </style>
+</head>
+<body>
+<header class="container-fluid bg-light d-flex sticky-top">
+  <div class="col-lg-10">
+    <img width="60px" height="60px" src="assets/image/furamalogo.png">
+  </div>
+  <div class="col-lg-2 d-flex justify-content-end">
+<!--    <a th:if="${#request.userPrincipal}==null" th:href="@{/login}" style="margin-top: 15px">Login</a>-->
+<!--    <span th:if="${#request.userPrincipal}!=null" style="margin-top: 15px"> Hi : <span-->
+<!--      th:utext="${#request.userPrincipal.name}" style="color: red"></span></span>-->
+    <img width="30px" height="30px"
+         src="https://i2.wp.com/dl8.glitter-graphics.net/pub/1252/1252978iual7aoqdc.gif?zoom=2"
+         style="margin: 15px 5px 0 5px">
+<!--    <a th:if="${#request.userPrincipal}!=null" th:href="@{/logout}" style="margin-top: 15px">Logout</a>-->
+  </div>
+</header>
+<!--carouse-->
+<div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/image/furama1.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/image/furama3.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/image/furama4.jpg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!--navbar-->
+  <nav class="navbar navbar-expand-lg border navbar-light" style="background-color: seagreen;margin: 3px 0">
+    <a class="navbar-brand ml-5" href="/furama" style="color: snow">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="navbar-brand ml-5"></a>
+          <a class="navbar-brand ml-3"></a>
+          <a class="navbar-brand ml-5" href="/employee" style="color: snow">Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand ml-5"></a>
+          <a class="navbar-brand ml-3"></a>
+          <a class="navbar-brand ml-5" href="/customer" style="color: snow">Customer</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand ml-5"></a>
+          <a class="navbar-brand ml-3"></a>
+          <a class="navbar-brand ml-5" href="/services" style="color: snow">Service</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand ml-5"></a>
+          <a class="navbar-brand ml-3"></a>
+          <a class="navbar-brand ml-5" href="/contract" style="color: snow">Contract</a>
+        </li>
+        <li class="nav-item">
+          <a class="navbar-brand ml-5"></a>
+          <a class="navbar-brand ml-3"></a>
+          <a class="navbar-brand ml-5" href="/contractDetail" style="color: snow">ContractDetail</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<div class="container-fluid bg-light border ">
+  <div class="row">
+    <div class="col-lg-2 border-right">
+      <div>
+        <div class="card m-3">
+          <img src="https://furamavietnam.com/wp-content/uploads/2018/07/CULIRARY.jpg" class="card-img-top"
+               alt="..." style="height: 130px">
+          <div class="card-body">
+            <p style="text-align: center">Ẩm thực</p>
+          </div>
+        </div>
+        <div class="card m-3">
+          <img src="https://furamavietnam.com/wp-content/uploads/2018/07/RECREATION.jpg" class="card-img-top"
+               alt="..." style="height: 130px">
+          <div class="card-body">
+            <p style="text-align: center">Giải trí</p>
+          </div>
+        </div>
+        <div class="card m-3">
+          <img src="https://furamavietnam.com/wp-content/uploads/2018/10/02.-ICP-ICP_Furama_Danang_-Ball-Room-4.jpg"
+               class="card-img-top" alt="..." style="height: 130px">
+          <div class="card-body">
+            <p style="text-align: center">Sự kiện</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-10 pt-3 pb-3">
+
+      <!--Mặc định trang chủ-->
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <img src="assets/image/furama5.jpg" class="card-img-top" alt="..." style="height: 400px">
+            <div class="card-body">
+              <p style="text-align: center">PHÒNG SUPERIOR HƯỚNG HỒ</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <img src="assets/image/furama6.jpg" class="card-img-top" alt="..." style="height: 400px">
+            <div class="card-body">
+              <p style="text-align: center">PHÒNG DELUXE HƯỚNG BIỂN</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mt-3">
+          <div class="card">
+            <img src="assets/image/furama7.jpg" class="card-img-top" alt="..." style="height: 400px">
+            <div class="card-body">
+              <p style="text-align: center">PHÒNG SUITE HƯỚNG BIỂN</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mt-3">
+          <div class="card">
+            <img src="assets/image/furama8.jpg" class="card-img-top" alt="..." style="height: 400px">
+            <div class="card-body">
+              <p style="text-align: center">PHÒNG PRESIDENTIAL SUITE</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mt-3">
+          <div class="card">
+            <img src="assets/image/furama11.jpg" class="card-img-top" alt="..." style="height: 400px">
+            <div class="card-body">
+              <p style="text-align: center">BIỆT THỰ HƯỚNG VƯỜN CÓ HỒ BƠI RIÊNG</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 mt-3">
+          <div class="card">
+            <img src="assets/image/furama12.jpg" class="card-img-top" alt="..." style="height: 400px">
+            <div class="card-body">
+              <p style="text-align: center">BIỆT THỰ HƯỚNG BIỂN CÓ HỒ BƠI RIÊNG</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Hết Mặc định trang chủ-->
+      <table style="border: solid #b1dfbb;margin: 10px;padding: 10px">
+        <td><a class="navbar-brand" href="/customer/money" style="width: 100%"><img width="17px" height="17px" src="https://i1.wp.com/i646.photobucket.com/albums/uu185/vanhoai1111/th_68.gif?zoom=2">Danh sách khách hàng đang sử dụng dịch vụ</a></td>
+      </table>
+
+    </div>
+  </div>
+</div>
+<footer class="bg-light text-center text-dark h-25">
+  <div class="text-center p-3" style="background-color: seagreen">
+    <p style="color: snow">Thanks you very much ! Best wish for you !</p>
+  </div>
+</footer>
+</body>
+</html>

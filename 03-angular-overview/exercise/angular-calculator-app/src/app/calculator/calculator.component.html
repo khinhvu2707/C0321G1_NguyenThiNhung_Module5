@@ -1,0 +1,24 @@
+<h2 style="text-align: center">calculator</h2>
+<div class="container">
+  <div class="input-group mb-5">
+    <button class="btn btn-outline-secondary w-25" type="button" id="button-addon1">First operand :</button>
+    <input type="text" [(ngModel)]="firstNumber" class="form-control" placeholder=""
+           aria-label="Example text with button addon" aria-describedby="button-addon1">
+  </div>
+  <div class="input-group mb-5">
+    <label class="btn btn-outline-secondary w-25" for="inputGroupSelect01">Operator : </label>
+    <select class="form-select" id="inputGroupSelect01" [(ngModel)]="operator">
+      <option value="+">Addition</option>
+      <option value="-">Subtraction</option>
+      <option value="*">Multiplication</option>
+      <option value="/">Division</option>
+    </select>
+  </div>
+  <div class="input-group mb-5">
+    <button class="btn btn-outline-secondary w-25" type="button" id="button-addon2">Second operand :</button>
+    <input type="text" [(ngModel)]="secondNumber" class="form-control" placeholder=""
+           aria-label="Example text with button addon" aria-describedby="button-addon1">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="caculate()">Submit</button>
+  <h5 style="margin-top: 10px;color: red">Result : <span>{{result}}</span></h5>
+</div>
