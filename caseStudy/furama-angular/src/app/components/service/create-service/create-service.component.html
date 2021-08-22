@@ -1,0 +1,83 @@
+<div class="mt-3 mb-3">
+  <form #createService ="ngForm" (ngSubmit)="createForm(createService)">
+    <div class="alert" role="alert" style="margin: 0 7%;background-color: #E8E7F5">
+      <h4 class="alert-heading" style="text-align: center">Please enter the information below !</h4>
+      <hr>
+      <div style="margin: 0 7%">
+        <label class="col-md-4 control-label ">Service Code</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <input ngModel name="code" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                 aria-describedby="button-addon1">
+        </div>
+        <label class="col-md-4 control-label ">Service Name</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <input ngModel name="name" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                 aria-describedby="button-addon1">
+        </div>
+        <label class="col-md-4 control-label ">Service Area</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <input ngModel name="area" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                 aria-describedby="button-addon1">
+        </div>
+        <label class="col-md-4 control-label ">Service Cost</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <input ngModel name="cost" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                 aria-describedby="button-addon1">
+        </div>
+        <label class="col-md-4 control-label ">Rent Type</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <select ngModel name="rentType" class="form-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <label class="col-md-4 control-label ">Service Type</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <select ngModel name="serviceType" class="form-select" id="inputGroupSelect02">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <label class="col-md-4 control-label ">StandardRoom</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <input ngModel name="standardRoom" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                 aria-describedby="button-addon1">
+        </div>
+        <label class="col-md-4 control-label ">Description Other Convenience</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                 aria-describedby="button-addon1">
+        </div>
+        <label class="col-md-4 control-label ">Pool Area</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <input ngModel name="poolArea" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                 aria-describedby="button-addon1">
+        </div>
+        <label class="col-md-4 control-label ">Number Of Floor</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <input ngModel name="numberOfFloor" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                 aria-describedby="button-addon1">
+        </div>
+      </div>
+      <hr>
+      <div class="mb-0" style="margin: 0 90%">
+        <button type="submit" class="btn m-2" style="background-color: #8ADA9E">Create</button>
+      </div>
+    </div>
+  </form>
+</div>
+
