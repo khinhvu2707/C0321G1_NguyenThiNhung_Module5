@@ -5,7 +5,9 @@ import {EmployeeService} from '../../../services/employee.service';
 import {DivisionService} from '../../../services/division.service';
 import {EducationDegreeService} from '../../../services/education-degree.service';
 import {PositionService} from '../../../services/position.service';
-import {IDivision, IEducationDegree, IPosition} from '../../../model/interface';
+import {IPosition} from '../../../model/position';
+import {IEducationDegree} from '../../../model/educationDegree';
+import {IDivision} from '../../../model/division';
 
 @Component({
   selector: 'app-create-employee',

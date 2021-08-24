@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IContract} from '../../../model/interface';
+import {IContract} from '../../../model/contract';
 import {ContractService} from '../../../services/contract.service';
 import {MatDialog} from '@angular/material/dialog';
 

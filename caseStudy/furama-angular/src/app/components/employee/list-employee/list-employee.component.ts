@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from '../../../services/employee.service';
-import {IEmployee} from '../../../model/interface';
+import {IEmployee} from '../../../model/employee';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogEmployeeComponent} from '../dialog-employee/dialog-employee.component';
 
