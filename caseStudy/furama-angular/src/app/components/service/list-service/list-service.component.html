@@ -1,28 +1,19 @@
 <h5 class="mt-3" style="text-align: center;color: darkviolet">List Service</h5>
-<form action="#">
-  <div class="row m-3">
-    <div class="col-sm-5">
-      <input class="form-control" type="search" placeholder="Search By Service Name"
-             aria-label="Search" name="employee">
-    </div>
-    <div class="col-sm-5">
-      <select class="form-select" name="position">
-        <option disabled="disabled" selected="selected" value="">No</option>
-        <option value="1"></option>
-      </select></div>
-    <div class="col-sm-2">
-      <button class="btn btn-outline-secondary" type="submit" style="width: 100%">Search
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-             viewBox="0 0 16 16">
-          <path
-            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+<div class="row m-3">
+  <div class="col-sm-9">
+    <a [routerLink]="['/service-create']">
+      <button type="button" class="btn" style="background-color: #EBE1FA">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+          <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
         </svg>
+        Create New Service
       </button>
-    </div>
+    </a>
   </div>
-</form>
-<div class="alert" role="alert" style="background-color: #EBE1FA">
-  <span style="color: red;text-align: center">Message</span>
+  <div class="col-sm-3">
+    <input [(ngModel)]="term" class="form-control" type="search" placeholder="Search"
+           aria-label="Search" name="employee">
+  </div>
 </div>
 <div class="table-responsive">
   <table class="table table-bordered table-hover">
@@ -40,17 +31,19 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th>1</th>
-      <td>Nhung</td>
-      <td>Nghệ An</td>
-      <td>Nghệ An</td>
-      <td>Nghệ An</td>
-      <td>Nghệ An</td>
+    <tr *ngFor="let service of services |filter:term | paginate: { itemsPerPage: 5, currentPage: p },let i=index ">
+      <th>{{i + 1}}</th>
+      <td>{{service.serviceCode}}</td>
+      <td>{{service.serviceName}}</td>
+      <td>{{service.serviceArea}}</td>
+      <td>{{service.rentType.rentTypeName}}</td>
+      <td>{{service.serviceType.serviceTypeName}}</td>
       <td style="text-align: center"><a [routerLink]="['/service-edit']">
         <button type="button" class="btn" style="background-color: #FADEED">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
-               viewBox="0 0 16 16"><path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+               viewBox="0 0 16 16">
+            <path
+              d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
           </svg>
           Edit
         </button>
@@ -80,39 +73,8 @@
     </tbody>
   </table>
 
-  <div class="row px-0 mx-0">
-    <div class="col-10 ps-4">
-      <a [routerLink]="['/service-create']">
-        <button type="button" class="btn" style="background-color: #EBE1FA">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle"
-               viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path
-              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-          </svg>
-          Create New Service
-        </button>
-      </a>
-    </div>
-    <div class="col-2">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  <div class="col-4">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 </div>
 

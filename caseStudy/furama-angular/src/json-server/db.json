@@ -1,21 +1,6 @@
 {
   "employees": [
     {
-      "id": 1,
-      "employeeCode": "Nv-0000",
-      "employeeName": "Nhung",
-      "employeeBirthday": "22/08/2021",
-      "employeeIdCard": "1111",
-      "employeeSalary": 123,
-      "employeePhone": "0123",
-      "employeeEmail": "nhung@gmail.com",
-      "employeeAddress": "Nghệ An",
-      "position": 2,
-      "educationDegree": 2,
-      "division": 1,
-      "flag": 1
-    },
-    {
       "id": 2,
       "employeeCode": "Nv-0001",
       "employeeName": "Nhi",
@@ -25,260 +10,453 @@
       "employeePhone": "01234",
       "employeeEmail": "nhi@gmail.com",
       "employeeAddress": "Nghệ An",
-      "position": 1,
-      "educationDegree": 1,
-      "division": 3,
-      "flag": 1
+      "position": {
+        "id": 1,
+        "positionName": "Lễ Tân"
+      },
+      "educationDegree": {
+        "id": 1,
+        "educationDegreeName": "Trung cấp"
+      },
+      "division": {
+        "id": 1,
+        "divisionName": "Sale-Marketing"
+      }
     },
     {
-      "employeeId": null,
-      "employeeCode": null,
-      "employeeName": null,
-      "employeeBirthday": null,
-      "employeeIdCard": null,
-      "employeeSalary": null,
-      "employeePhone": null,
-      "employeeEmail": null,
-      "employeeAddress": null,
-      "position": null,
-      "educationDegree": null,
-      "division": null,
-      "flag": null,
-      "id": 3
-    },
-    {
-      "employeeId": null,
-      "employeeCode": null,
-      "employeeName": null,
-      "employeeBirthday": null,
-      "employeeIdCard": null,
-      "employeeSalary": null,
-      "employeePhone": null,
-      "employeeEmail": null,
-      "employeeAddress": null,
-      "position": null,
-      "educationDegree": null,
-      "division": null,
-      "flag": null,
-      "id": 4
-    },
-    {
-      "employeeId": null,
-      "employeeCode": "hhhh",
-      "employeeName": null,
-      "employeeBirthday": null,
-      "employeeIdCard": null,
-      "employeeSalary": null,
-      "employeePhone": null,
-      "employeeEmail": null,
-      "employeeAddress": null,
-      "position": null,
-      "educationDegree": null,
-      "division": null,
-      "flag": null,
-      "id": 5
-    },
-    {
-      "employeeId": null,
-      "employeeCode": null,
-      "employeeName": null,
-      "employeeBirthday": null,
-      "employeeIdCard": null,
-      "employeeSalary": null,
-      "employeePhone": null,
-      "employeeEmail": null,
-      "employeeAddress": null,
-      "position": null,
-      "educationDegree": null,
-      "division": null,
-      "flag": null,
-      "id": 6
-    },
-    {
-      "employeeId": null,
-      "employeeCode": "hjdkajfd",
-      "employeeName": "eaea",
-      "employeeBirthday": "2021-08-25",
-      "employeeIdCard": "111",
+      "employeeCode": "123",
+      "employeeName": "nhung",
+      "employeeBirthday": "2021-08-26",
+      "employeeIdCard": "12",
       "employeeSalary": "1",
-      "employeePhone": "21",
-      "employeeEmail": "fd",
-      "employeeAddress": "ds",
-      "position": "1",
-      "educationDegree": "1",
-      "division": "1",
-      "flag": null,
-      "id": 7
-    },
-    {
-      "employeeId": null,
-      "employeeCode": "hjdkajfd",
-      "employeeName": "eaea",
-      "employeeBirthday": "2021-08-25",
-      "employeeIdCard": "111",
-      "employeeSalary": "1",
-      "employeePhone": "21",
-      "employeeEmail": "fd",
-      "employeeAddress": "ds",
-      "position": "1",
-      "educationDegree": "1",
-      "division": "1",
-      "flag": null,
-      "id": 8
-    },
-    {
-      "id": 9,
-      "employeeCode": null,
-      "employeeName": null,
-      "employeeBirthday": null,
-      "employeeIdCard": null,
-      "employeeSalary": null,
-      "employeePhone": null,
-      "employeeEmail": null,
-      "employeeAddress": null,
-      "position": null,
-      "educationDegree": null,
-      "division": null,
-      "flag": null
-    },
-    {
-      "id": 10,
-      "employeeCode": "hhh",
-      "employeeName": "d",
-      "employeeBirthday": "2021-08-25",
-      "employeeIdCard": "33",
-      "employeeSalary": "2",
-      "employeePhone": "11",
-      "employeeEmail": "fd",
-      "employeeAddress": "d",
-      "position": "1",
-      "educationDegree": "2",
-      "division": "1",
-      "flag": null
-    },
-    {
-      "employeeCode": null,
-      "employeeName": null,
-      "employeeBirthday": null,
-      "employeeIdCard": null,
-      "employeeSalary": null,
-      "employeePhone": null,
-      "employeeEmail": null,
-      "employeeAddress": null,
-      "position": null,
-      "educationDegree": null,
-      "division": null,
-      "flag": null,
-      "id": 11
-    },
-    {
-      "employeeCode": "dsgas",
-      "employeeName": "dd",
-      "employeeBirthday": null,
-      "employeeIdCard": null,
-      "employeeSalary": null,
-      "employeePhone": null,
-      "employeeEmail": null,
-      "employeeAddress": null,
-      "position": null,
-      "educationDegree": null,
-      "division": null,
-      "flag": null,
-      "id": 12
-    },
-    {
-      "employeeId": null,
-      "employeeCode": null,
-      "employeeName": null,
-      "employeeBirthday": null,
-      "employeeIdCard": null,
-      "employeeSalary": null,
-      "employeePhone": null,
-      "employeeEmail": null,
-      "employeeAddress": null,
-      "position": null,
-      "educationDegree": null,
-      "division": null,
-      "flag": null,
+      "employeePhone": "123",
+      "employeeEmail": "gđaaaaa",
+      "employeeAddress": "hi",
+      "position": {
+        "id": 1,
+        "positionName": "Lễ Tân"
+      },
+      "educationDegree": {
+        "id": 1,
+        "educationDegreeName": "Trung cấp"
+      },
+      "division": {
+        "id": 1,
+        "divisionName": "Sale-Marketing"
+      },
       "id": 13
     },
     {
-      "employeeId": null,
-      "employeeCode": "hakjdkla",
-      "employeeName": "dsss",
-      "employeeBirthday": null,
-      "employeeIdCard": null,
-      "employeeSalary": null,
-      "employeePhone": null,
-      "employeeEmail": null,
-      "employeeAddress": null,
-      "position": null,
-      "educationDegree": null,
-      "division": "1",
-      "flag": null,
-      "id": 14
+      "employeeCode": "222222222",
+      "employeeName": "hihi",
+      "employeeBirthday": "2021-08-26",
+      "employeeIdCard": "111",
+      "employeeSalary": "11",
+      "employeePhone": "234",
+      "employeeEmail": "12",
+      "employeeAddress": "hhhhhhhhh",
+      "position": {
+        "id": 1,
+        "positionName": "Lễ Tân"
+      },
+      "educationDegree": {
+        "id": 1,
+        "educationDegreeName": "Trung cấp"
+      },
+      "division": {
+        "id": 1,
+        "divisionName": "Sale-Marketing"
+      },
+      "id": 23
+    },
+    {
+      "employeeCode": "ffff",
+      "employeeName": "dddd",
+      "employeeBirthday": "2021-08-26",
+      "employeeIdCard": "11",
+      "employeeSalary": "123",
+      "employeePhone": "111",
+      "employeeEmail": "fffffffff",
+      "employeeAddress": "s",
+      "position": {
+        "id": 1,
+        "positionName": "Lễ Tân"
+      },
+      "educationDegree": {
+        "id": 1,
+        "educationDegreeName": "Trung cấp"
+      },
+      "division": {
+        "id": 1,
+        "divisionName": "Sale-Marketing"
+      },
+      "id": 24
+    },
+    {
+      "employeeCode": "NV-1111",
+      "employeeName": "Nhiii",
+      "employeeBirthday": "2021-08-27",
+      "employeeIdCard": "111111111",
+      "employeeSalary": "12",
+      "employeePhone": "0901111111",
+      "employeeEmail": "dddđ",
+      "employeeAddress": "dd",
+      "position": {
+        "id": 6,
+        "positionName": "Giám đốc"
+      },
+      "educationDegree": {
+        "id": 3,
+        "educationDegreeName": "Đại học"
+      },
+      "division": {
+        "id": 3,
+        "divisionName": "Phục vụ"
+      },
+      "id": 25
     }
   ],
   "position": [
     {
-      "positionId": 1,
+      "id": 1,
       "positionName": "Lễ Tân"
     },
     {
-      "positionId": 2,
+      "id": 2,
       "positionName": "Phục Vụ"
     },
     {
-      "positionId": 3,
+      "id": 3,
       "positionName": "Chuyên viên"
     },
     {
-      "positionId": 4,
+      "id": 4,
       "positionName": "Giám sát"
     },
     {
-      "positionId": 5,
+      "id": 5,
       "positionName": "Quản lý"
     },
     {
-      "positionId": 6,
+      "id": 6,
       "positionName": "Giám đốc"
     }
   ],
   "division": [
     {
-      "divisionId": 1,
+      "id": 1,
       "divisionName": "Sale-Marketing"
     },
     {
-      "divisionId": 2,
+      "id": 2,
       "divisionName": "Hành chính"
     },
     {
-      "divisionId": 3,
+      "id": 3,
       "divisionName": "Phục vụ"
     },
     {
-      "divisionId": 4,
+      "id": 4,
       "divisionName": "Quản lý"
     }
   ],
   "educationDegree": [
     {
-      "educationDegreeId": 1,
+      "id": 1,
       "educationDegreeName": "Trung cấp"
     },
     {
-      "educationDegreeId": 2,
+      "id": 2,
       "educationDegreeName": "Cao đẳng"
     },
     {
-      "educationDegreeId": 3,
+      "id": 3,
       "educationDegreeName": "Đại học"
     },
     {
-      "educationDegreeId": 4,
+      "id": 4,
       "educationDegreeName": "Sau Đại học"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "rentTypeName": "Year",
+      "rentTypeCost": "1000000"
+    },
+    {
+      "id": 1,
+      "rentTypeName": "Month",
+      "rentTypeCost": "500000"
+    },
+    {
+      "id": 1,
+      "rentTypeName": "Day",
+      "rentTypeCost": "200000"
+    },
+    {
+      "id": 1,
+      "rentTypeName": "Hour",
+      "rentTypeCost": "50000"
+    }
+  ],
+  "serviceType": [
+    {
+      "id": 1,
+      "serviceTypeName": "Villa"
+    },
+    {
+      "id": 2,
+      "serviceTypeName": "House"
+    },
+    {
+      "id": 3,
+      "serviceTypeName": "Room"
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "customerTypeName": "Diamond"
+    },
+    {
+      "id": 2,
+      "customerTypeName": "Platinium"
+    },
+    {
+      "id": 3,
+      "customerTypeName": "Gold"
+    },
+    {
+      "id": 4,
+      "customerTypeName": "Silver"
+    },
+    {
+      "id": 5,
+      "customerTypeName": "Member"
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "customerCode": "KH-0000",
+      "customerType": {
+        "id": 4,
+        "customerTypeName": "Silver"
+      },
+      "customerName": "Tuyết",
+      "customerBirthday": "01/03/2000",
+      "customerGender": 1,
+      "customerIdCard": 123,
+      "customerPhone": 123,
+      "customerEmail": "abc",
+      "customerAddress": "xyz"
+    }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "serviceCode": "SV-0000",
+      "serviceName": "Vip1",
+      "serviceArea": 123,
+      "serviceCost": 123,
+      "serviceMaxPeople": 1,
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Year",
+        "rentTypeCost": "1000000"
+      },
+      "serviceType": {
+        "id": 1,
+        "serviceTypeName": "Villa"
+      },
+      "standardRoom": "1 sao",
+      "descriptionOtherConvenience": "không",
+      "poolArea": 20,
+      "numberOfFloor": 10
+    }
+  ],
+  "attachService": [
+    {
+      "id": 1,
+      "attachServiceName": "Massage",
+      "attachServiceCost": 100000,
+      "attachServiceUnit": 1,
+      "attachServiceStatus": "empty"
+    },
+    {
+      "id": 2,
+      "attachServiceName": "Karaoke",
+      "attachServiceCost": 100000,
+      "attachServiceUnit": 1,
+      "attachServiceStatus": "empty"
+    },
+    {
+      "id": 3,
+      "attachServiceName": "Food",
+      "attachServiceCost": 50000,
+      "attachServiceUnit": 1,
+      "attachServiceStatus": "empty"
+    },
+    {
+      "id": 4,
+      "attachServiceName": "Drink",
+      "attachServiceCost": 20000,
+      "attachServiceUnit": 1,
+      "attachServiceStatus": "empty"
+    },
+    {
+      "id": 5,
+      "attachServiceName": "Car",
+      "attachServiceCost": 200000,
+      "attachServiceUnit": 1,
+      "attachServiceStatus": "empty"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "contractStartDate": "22/08/2020",
+      "contractEndDate": "22/08/2021",
+      "contractDeposit": 123,
+      "contractTotalMoney": 1000000,
+      "employee": {
+        "employeeCode": "123",
+        "employeeName": "nhung",
+        "employeeBirthday": "2021-08-26",
+        "employeeIdCard": "12",
+        "employeeSalary": "1",
+        "employeePhone": "123",
+        "employeeEmail": "gđaaaaa",
+        "employeeAddress": "hi",
+        "position": {
+          "id": 1,
+          "positionName": "Lễ Tân"
+        },
+        "educationDegree": {
+          "id": 1,
+          "educationDegreeName": "Trung cấp"
+        },
+        "division": {
+          "id": 1,
+          "divisionName": "Sale-Marketing"
+        },
+        "id": 13
+      },
+      "customer": {
+        "id": 1,
+        "customerCode": "KH-0000",
+        "customerType": {
+          "id": 4,
+          "customerTypeName": "Silver"
+        },
+        "customerName": "Tuyết",
+        "customerBirthday": "01/03/2000",
+        "customerGender": 1,
+        "customerIdCard": 123,
+        "customerPhone": 123,
+        "customerEmail": "abc",
+        "customerAddress": "xyz"
+      },
+      "service": {
+        "id": 1,
+        "serviceCode": "SV-0000",
+        "serviceName": "Vip1",
+        "serviceArea": 123,
+        "serviceCost": 123,
+        "serviceMaxPeople": 1,
+        "rentType": {
+          "id": 1,
+          "rentTypeName": "Year",
+          "rentTypeCost": "1000000"
+        },
+        "serviceType": {
+          "id": 1,
+          "serviceTypeName": "Villa"
+        },
+        "standardRoom": "1 sao",
+        "descriptionOtherConvenience": "không",
+        "poolArea": 20,
+        "numberOfFloor": 10
+      }
+    }
+  ],
+  "contractDetail": [
+    { "id": 1,
+      "contract": {
+        "id": 1,
+        "contractStartDate": "22/08/2020",
+        "contractEndDate": "22/08/2021",
+        "contractDeposit": 123,
+        "contractTotalMoney": 1000000,
+        "employee": {
+          "employeeCode": "123",
+          "employeeName": "nhung",
+          "employeeBirthday": "2021-08-26",
+          "employeeIdCard": "12",
+          "employeeSalary": "1",
+          "employeePhone": "123",
+          "employeeEmail": "gđaaaaa",
+          "employeeAddress": "hi",
+          "position": {
+            "id": 1,
+            "positionName": "Lễ Tân"
+          },
+          "educationDegree": {
+            "id": 1,
+            "educationDegreeName": "Trung cấp"
+          },
+          "division": {
+            "id": 1,
+            "divisionName": "Sale-Marketing"
+          },
+          "id": 13
+        },
+        "customer": {
+          "id": 1,
+          "customerCode": "KH-0000",
+          "customerType": {
+            "id": 4,
+            "customerTypeName": "Silver"
+          },
+          "customerName": "Tuyết",
+          "customerBirthday": "01/03/2000",
+          "customerGender": 1,
+          "customerIdCard": 123,
+          "customerPhone": 123,
+          "customerEmail": "abc",
+          "customerAddress": "xyz"
+        },
+        "service": {
+          "id": 1,
+          "serviceCode": "SV-0000",
+          "serviceName": "Vip1",
+          "serviceArea": 123,
+          "serviceCost": 123,
+          "serviceMaxPeople": 1,
+          "rentType": {
+            "id": 1,
+            "rentTypeName": "Year",
+            "rentTypeCost": "1000000"
+          },
+          "serviceType": {
+            "id": 1,
+            "serviceTypeName": "Villa"
+          },
+          "standardRoom": "1 sao",
+          "descriptionOtherConvenience": "không",
+          "poolArea": 20,
+          "numberOfFloor": 10
+        }
+      },
+      "attachService": {
+        "id": 1,
+        "attachServiceName": "Massage",
+        "attachServiceCost": 100000,
+        "attachServiceUnit": 1,
+        "attachServiceStatus": "empty"
+      },
+      "quantity": 123
     }
   ]
 }

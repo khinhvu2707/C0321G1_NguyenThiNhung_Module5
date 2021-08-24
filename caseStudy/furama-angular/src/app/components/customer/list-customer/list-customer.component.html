@@ -1,28 +1,23 @@
 <h5 class="mt-3" style="text-align: center;color: darkviolet">List Customer</h5>
-<form action="#">
-  <div class="row m-3">
-    <div class="col-sm-5">
-      <input class="form-control" type="search" placeholder="Search By Customer Name"
-             aria-label="Search" name="employee">
-    </div>
-    <div class="col-sm-5">
-      <select class="form-select" name="position">
-        <option disabled="disabled" selected="selected" value="">No</option>
-        <option value="1"></option>
-      </select></div>
-    <div class="col-sm-2">
-      <button class="btn btn-outline-secondary" type="submit" style="width: 100%">Search
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-             viewBox="0 0 16 16">
+<div class="row m-3">
+  <div class="col-sm-9">
+    <a [routerLink]="['/customer-create']">
+      <button type="button" class="btn" style="background-color: #EBE1FA">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus"
+             viewBox="0 2 16 16">
           <path
-            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+          <path fill-rule="evenodd"
+                d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
         </svg>
+        Create New Customer
       </button>
-    </div>
+    </a>
   </div>
-</form>
-<div class="alert" role="alert" style="background-color: #EBE1FA">
-  <span style="color: red;text-align: center">Message</span>
+  <div class="col-sm-3">
+    <input [(ngModel)]="term" class="form-control" type="search" placeholder="Search"
+           aria-label="Search" name="employee">
+  </div>
 </div>
 <div class="table-responsive">
   <table class="table table-bordered table-hover">
@@ -39,12 +34,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th>1</th>
-      <td>Nhung</td>
-      <td>Nghệ An</td>
-      <td>Nghệ An</td>
-      <td>Nghệ An</td>
+    <tr *ngFor="let customer of customers |filter:term | paginate: { itemsPerPage: 5, currentPage: p },let i=index ">
+      <th>{{i+1}}</th>
+      <td>{{customer.customerCode}}</td>
+      <td>{{customer.customerType.customerTypeName}}</td>
+      <td>{{customer.customerName}}</td>
+      <td *ngIf="customer.customerGender==0">Male</td>
+      <td *ngIf="customer.customerGender==1">Female</td>
       <td style="text-align: center"><a [routerLink]="['/customer-edit']">
         <button type="button" class="btn" style="background-color: #FADEED">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -77,41 +73,8 @@
     </tr>
     </tbody>
   </table>
-
-  <div class="row px-0 mx-0">
-    <div class="col-10 ps-4">
-      <a [routerLink]="['/customer-create']">
-        <button type="button" class="btn" style="background-color: #EBE1FA">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-plus"
-               viewBox="0 2 16 16">
-            <path
-              d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-            <path fill-rule="evenodd"
-                  d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-          </svg>
-          Create New Customer
-        </button>
-      </a>
-    </div>
-    <div class="col-2">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  <div class="col-4">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 </div>
 

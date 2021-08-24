@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from '../../../services/employee.service';
-import {IEmployee} from '../../../model/employee';
+import {IEmployee} from '../../../model/interface';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogEmployeeComponent} from '../dialog-employee/dialog-employee.component';
 
@@ -14,7 +14,8 @@ export class ListEmployeeComponent implements OnInit {
   p: string | number;
   term: any;
 
-  constructor(public employeeList: EmployeeService, public dialog: MatDialog) {
+  constructor(public employeeList: EmployeeService,
+              public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -28,7 +29,7 @@ export class ListEmployeeComponent implements OnInit {
     this.employeeList.getEmployeeById(id).subscribe(dataDialog => {
       console.log(dataDialog);
       const dialogRef = this.dialog.open(DialogEmployeeComponent, {
-        width: '250px',
+        width: '500px',
         data: {name: dataDialog},
         disableClose: true
       });

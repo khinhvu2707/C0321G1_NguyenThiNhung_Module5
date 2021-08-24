@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {IEmployee} from '../model/employee';
+import {IEmployee} from '../model/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,8 @@ export class EmployeeService {
     return this.http.get<IEmployee[]>(this.API + '/' + id).pipe();
   }
 
-  deleteEmployee(id): Observable<IEmployee[]> {
-    return this.http.delete<IEmployee[]>(this.API + '/' + id).pipe();
+  deleteEmployee(id): Observable<any> {
+    return this.http.delete(this.API + '/' + id);
   }
 
   createNewEmployee(employee): Observable<IEmployee> {
