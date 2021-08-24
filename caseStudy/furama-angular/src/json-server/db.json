@@ -1,7 +1,7 @@
 {
   "employees": [
     {
-      "employeeId": 1,
+      "id": 1,
       "employeeCode": "Nv-0000",
       "employeeName": "Nhung",
       "employeeBirthday": "22/08/2021",
@@ -16,7 +16,7 @@
       "flag": 1
     },
     {
-      "employeeId": 2,
+      "id": 2,
       "employeeCode": "Nv-0001",
       "employeeName": "Nhi",
       "employeeBirthday": "22/08/2021",
@@ -29,6 +29,256 @@
       "educationDegree": 1,
       "division": 3,
       "flag": 1
+    },
+    {
+      "employeeId": null,
+      "employeeCode": null,
+      "employeeName": null,
+      "employeeBirthday": null,
+      "employeeIdCard": null,
+      "employeeSalary": null,
+      "employeePhone": null,
+      "employeeEmail": null,
+      "employeeAddress": null,
+      "position": null,
+      "educationDegree": null,
+      "division": null,
+      "flag": null,
+      "id": 3
+    },
+    {
+      "employeeId": null,
+      "employeeCode": null,
+      "employeeName": null,
+      "employeeBirthday": null,
+      "employeeIdCard": null,
+      "employeeSalary": null,
+      "employeePhone": null,
+      "employeeEmail": null,
+      "employeeAddress": null,
+      "position": null,
+      "educationDegree": null,
+      "division": null,
+      "flag": null,
+      "id": 4
+    },
+    {
+      "employeeId": null,
+      "employeeCode": "hhhh",
+      "employeeName": null,
+      "employeeBirthday": null,
+      "employeeIdCard": null,
+      "employeeSalary": null,
+      "employeePhone": null,
+      "employeeEmail": null,
+      "employeeAddress": null,
+      "position": null,
+      "educationDegree": null,
+      "division": null,
+      "flag": null,
+      "id": 5
+    },
+    {
+      "employeeId": null,
+      "employeeCode": null,
+      "employeeName": null,
+      "employeeBirthday": null,
+      "employeeIdCard": null,
+      "employeeSalary": null,
+      "employeePhone": null,
+      "employeeEmail": null,
+      "employeeAddress": null,
+      "position": null,
+      "educationDegree": null,
+      "division": null,
+      "flag": null,
+      "id": 6
+    },
+    {
+      "employeeId": null,
+      "employeeCode": "hjdkajfd",
+      "employeeName": "eaea",
+      "employeeBirthday": "2021-08-25",
+      "employeeIdCard": "111",
+      "employeeSalary": "1",
+      "employeePhone": "21",
+      "employeeEmail": "fd",
+      "employeeAddress": "ds",
+      "position": "1",
+      "educationDegree": "1",
+      "division": "1",
+      "flag": null,
+      "id": 7
+    },
+    {
+      "employeeId": null,
+      "employeeCode": "hjdkajfd",
+      "employeeName": "eaea",
+      "employeeBirthday": "2021-08-25",
+      "employeeIdCard": "111",
+      "employeeSalary": "1",
+      "employeePhone": "21",
+      "employeeEmail": "fd",
+      "employeeAddress": "ds",
+      "position": "1",
+      "educationDegree": "1",
+      "division": "1",
+      "flag": null,
+      "id": 8
+    },
+    {
+      "id": 9,
+      "employeeCode": null,
+      "employeeName": null,
+      "employeeBirthday": null,
+      "employeeIdCard": null,
+      "employeeSalary": null,
+      "employeePhone": null,
+      "employeeEmail": null,
+      "employeeAddress": null,
+      "position": null,
+      "educationDegree": null,
+      "division": null,
+      "flag": null
+    },
+    {
+      "id": 10,
+      "employeeCode": "hhh",
+      "employeeName": "d",
+      "employeeBirthday": "2021-08-25",
+      "employeeIdCard": "33",
+      "employeeSalary": "2",
+      "employeePhone": "11",
+      "employeeEmail": "fd",
+      "employeeAddress": "d",
+      "position": "1",
+      "educationDegree": "2",
+      "division": "1",
+      "flag": null
+    },
+    {
+      "employeeCode": null,
+      "employeeName": null,
+      "employeeBirthday": null,
+      "employeeIdCard": null,
+      "employeeSalary": null,
+      "employeePhone": null,
+      "employeeEmail": null,
+      "employeeAddress": null,
+      "position": null,
+      "educationDegree": null,
+      "division": null,
+      "flag": null,
+      "id": 11
+    },
+    {
+      "employeeCode": "dsgas",
+      "employeeName": "dd",
+      "employeeBirthday": null,
+      "employeeIdCard": null,
+      "employeeSalary": null,
+      "employeePhone": null,
+      "employeeEmail": null,
+      "employeeAddress": null,
+      "position": null,
+      "educationDegree": null,
+      "division": null,
+      "flag": null,
+      "id": 12
+    },
+    {
+      "employeeId": null,
+      "employeeCode": null,
+      "employeeName": null,
+      "employeeBirthday": null,
+      "employeeIdCard": null,
+      "employeeSalary": null,
+      "employeePhone": null,
+      "employeeEmail": null,
+      "employeeAddress": null,
+      "position": null,
+      "educationDegree": null,
+      "division": null,
+      "flag": null,
+      "id": 13
+    },
+    {
+      "employeeId": null,
+      "employeeCode": "hakjdkla",
+      "employeeName": "dsss",
+      "employeeBirthday": null,
+      "employeeIdCard": null,
+      "employeeSalary": null,
+      "employeePhone": null,
+      "employeeEmail": null,
+      "employeeAddress": null,
+      "position": null,
+      "educationDegree": null,
+      "division": "1",
+      "flag": null,
+      "id": 14
+    }
+  ],
+  "position": [
+    {
+      "positionId": 1,
+      "positionName": "Lễ Tân"
+    },
+    {
+      "positionId": 2,
+      "positionName": "Phục Vụ"
+    },
+    {
+      "positionId": 3,
+      "positionName": "Chuyên viên"
+    },
+    {
+      "positionId": 4,
+      "positionName": "Giám sát"
+    },
+    {
+      "positionId": 5,
+      "positionName": "Quản lý"
+    },
+    {
+      "positionId": 6,
+      "positionName": "Giám đốc"
+    }
+  ],
+  "division": [
+    {
+      "divisionId": 1,
+      "divisionName": "Sale-Marketing"
+    },
+    {
+      "divisionId": 2,
+      "divisionName": "Hành chính"
+    },
+    {
+      "divisionId": 3,
+      "divisionName": "Phục vụ"
+    },
+    {
+      "divisionId": 4,
+      "divisionName": "Quản lý"
+    }
+  ],
+  "educationDegree": [
+    {
+      "educationDegreeId": 1,
+      "educationDegreeName": "Trung cấp"
+    },
+    {
+      "educationDegreeId": 2,
+      "educationDegreeName": "Cao đẳng"
+    },
+    {
+      "educationDegreeId": 3,
+      "educationDegreeName": "Đại học"
+    },
+    {
+      "educationDegreeId": 4,
+      "educationDegreeName": "Sau Đại học"
     }
   ]
 }

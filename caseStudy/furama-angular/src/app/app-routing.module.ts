@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+
 import {HomeComponent} from './components/home/home.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {ListEmployeeComponent} from './components/employee/list-employee/list-employee.component';
@@ -24,7 +24,7 @@ import {EditServiceComponent} from './components/service/edit-service/edit-servi
 import {ListServiceComponent} from './components/service/list-service/list-service.component';
 import {ViewServiceComponent} from './components/service/view-service/view-service.component';
 import {CommonModule} from '@angular/common';
-
+import {ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -53,15 +53,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes), FormsModule, CommonModule],
+  imports: [RouterModule.forRoot(routes), CommonModule, ReactiveFormsModule],
   exports: [RouterModule],
-  // tslint:disable-next-line:max-line-length
-  declarations: [HomeComponent, PageNotFoundComponent,
-    ListEmployeeComponent, CreateEmployeeComponent, EditEmployeeComponent, ViewEmployeeComponent,
-    CreateCustomerComponent, EditCustomerComponent, ListCustomerComponent, ViewCustomerComponent,
-    CreateContractComponent, EditContractComponent, ListContractComponent, ViewContractComponent,
-    CreateContractDetailComponent, EditContractDetailComponent, ViewContractDetailComponent, ListContractDetailComponent,
-    CreateServiceComponent, EditServiceComponent, ListServiceComponent, ViewServiceComponent]
+  declarations: []
 })
 export class AppRoutingModule {
 }

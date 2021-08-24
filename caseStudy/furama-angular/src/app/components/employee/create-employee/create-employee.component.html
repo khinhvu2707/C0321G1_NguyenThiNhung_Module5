@@ -1,55 +1,61 @@
 <div class="mt-3 container-fluid mx-0 px-0 mb-3">
-  <form #createEmployee ="ngForm" (ngSubmit)="createForm(createEmployee)">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <div class="alert" role="alert" style="margin: 0 7%;background-color: #E8E7F5">
       <h4 class="alert-heading" style="text-align: center">Please enter the information below !</h4>
       <hr>
       <div style="margin: 0 7%">
+        <label class="col-md-4 control-label ">Code</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <input formControlName="employeeCode" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                 aria-describedby="button-addon1">
+        </div>
         <label class="col-md-4 control-label ">Name</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="name" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="employeeName" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
         </div>
         <label class="col-md-4 control-label ">Birthday</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="birthday" type="date" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="employeeBirthday" type="date" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
         </div>
         <label class="col-md-4 control-label ">Id Card</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="idCard" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="employeeIdCard" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
         </div>
         <label class="col-md-4 control-label ">Salary</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="salary" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="employeeSalary" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
         </div>
         <label class="col-md-4 control-label ">Phone</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="phone" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="employeePhone" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
         </div>
         <label class="col-md-4 control-label ">Email</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="email" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="employeeEmail" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
         </div>
         <label class="col-md-4 control-label ">Address</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="address" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="employeeAddress" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
         </div>
         <label class="col-md-4 control-label ">Position</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <select ngModel name="position" class="form-select" id="inputGroupSelect01">
+          <select formControlName="position" class="form-select" id="inputGroupSelect01">
             <option selected>Choose...</option>
             <option value="1">One</option>
             <option value="2">Two</option>
@@ -59,7 +65,7 @@
         <label class="col-md-4 control-label ">EducationDegree</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <select ngModel name="educationDegree" class="form-select" id="inputGroupSelect02">
+          <select formControlName="educationDegree" class="form-select" id="inputGroupSelect02">
             <option selected>Choose...</option>
             <option value="1">One</option>
             <option value="2">Two</option>
@@ -69,7 +75,7 @@
         <label class="col-md-4 control-label ">Division</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <select ngModel name="division" class="form-select" id="inputGroupSelect03">
+          <select formControlName="division" class="form-select" id="inputGroupSelect03">
             <option selected>Choose...</option>
             <option value="1">One</option>
             <option value="2">Two</option>

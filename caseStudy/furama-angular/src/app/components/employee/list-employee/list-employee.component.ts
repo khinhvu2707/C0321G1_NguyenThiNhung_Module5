@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {EmployeeService} from '../../../services/employee.service';
+import {IEmployee} from '../../../model/employee';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogEmployeeComponent} from '../dialog-employee/dialog-employee.component';
 
 @Component({
   selector: 'app-list-employee',
@@ -7,9 +10,11 @@ import {EmployeeService} from '../../../services/employee.service';
   styleUrls: ['./list-employee.component.css']
 })
 export class ListEmployeeComponent implements OnInit {
-  public employees;
+  employees: IEmployee[] = [];
+  p: string | number;
+  term: any;
 
-  constructor(public employeeList: EmployeeService) {
+  constructor(public employeeList: EmployeeService, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -18,20 +23,22 @@ export class ListEmployeeComponent implements OnInit {
     });
   }
 
+  openDialog(id: any): void {
+    console.log(id);
+    this.employeeList.getEmployeeById(id).subscribe(dataDialog => {
+      console.log(dataDialog);
+      const dialogRef = this.dialog.open(DialogEmployeeComponent, {
+        width: '250px',
+        data: {name: dataDialog},
+        disableClose: true
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        this.ngOnInit();
+      });
+    });
+  }
+
 }
 
-// interface IEmployee {
-//   employeeId: number;
-//   employeeCode: string;
-//   employeeName: string;
-//   employeeBirthday: string;
-//   employeeIdCard: string;
-//   employeeSalary: number;
-//   employeePhone: string;
-//   employeeEmail: string;
-//   employeeAddress: string;
-//   position: number;
-//   educationDegree: number;
-//   division: number;
-//   flag: number;
-// }
