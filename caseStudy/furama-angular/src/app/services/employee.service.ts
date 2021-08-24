@@ -27,4 +27,8 @@ export class EmployeeService {
   createNewEmployee(employee): Observable<IEmployee> {
     return this.http.post<IEmployee>(this.API, employee).pipe();
   }
+
+  editEmployee(employee, employeeId): Observable<IEmployee> {
+    return this.http.put<IEmployee>(this.API + '/' + employeeId, employee).pipe();
+  }
 }

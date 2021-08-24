@@ -1,13 +1,12 @@
 {
   "employees": [
     {
-      "id": 2,
-      "employeeCode": "Nv-0001",
+      "employeeCode": "NV-0001",
       "employeeName": "Nhi",
-      "employeeBirthday": "22/08/2021",
-      "employeeIdCard": "1112",
+      "employeeBirthday": "2021-08-26",
+      "employeeIdCard": "111211111",
       "employeeSalary": 123,
-      "employeePhone": "01234",
+      "employeePhone": "0901111111",
       "employeeEmail": "nhi@gmail.com",
       "employeeAddress": "Nghệ An",
       "position": {
@@ -21,11 +20,12 @@
       "division": {
         "id": 1,
         "divisionName": "Sale-Marketing"
-      }
+      },
+      "id": 2
     },
     {
       "employeeCode": "123",
-      "employeeName": "nhung",
+      "employeeName": "Tình Tuyết",
       "employeeBirthday": "2021-08-26",
       "employeeIdCard": "12",
       "employeeSalary": "1",
@@ -33,12 +33,12 @@
       "employeeEmail": "gđaaaaa",
       "employeeAddress": "hi",
       "position": {
-        "id": 1,
-        "positionName": "Lễ Tân"
+        "id": 4,
+        "positionName": "Giám sát"
       },
       "educationDegree": {
-        "id": 1,
-        "educationDegreeName": "Trung cấp"
+        "id": 4,
+        "educationDegreeName": "Sau Đại học"
       },
       "division": {
         "id": 1,
@@ -56,16 +56,16 @@
       "employeeEmail": "12",
       "employeeAddress": "hhhhhhhhh",
       "position": {
-        "id": 1,
-        "positionName": "Lễ Tân"
+        "id": 6,
+        "positionName": "Giám đốc"
       },
       "educationDegree": {
-        "id": 1,
-        "educationDegreeName": "Trung cấp"
+        "id": 4,
+        "educationDegreeName": "Sau Đại học"
       },
       "division": {
-        "id": 1,
-        "divisionName": "Sale-Marketing"
+        "id": 4,
+        "divisionName": "Quản lý"
       },
       "id": 23
     },
@@ -114,6 +114,29 @@
         "divisionName": "Phục vụ"
       },
       "id": 25
+    },
+    {
+      "employeeCode": "NV-1111",
+      "employeeName": "fh",
+      "employeeBirthday": "2021-08-25",
+      "employeeIdCard": "121111111",
+      "employeeSalary": "12",
+      "employeePhone": "0901111111",
+      "employeeEmail": "hi",
+      "employeeAddress": "hi",
+      "position": {
+        "id": 1,
+        "positionName": "Lễ Tân"
+      },
+      "educationDegree": {
+        "id": 4,
+        "educationDegreeName": "Sau Đại học"
+      },
+      "division": {
+        "id": 2,
+        "divisionName": "Hành chính"
+      },
+      "id": 27
     }
   ],
   "position": [
@@ -382,7 +405,8 @@
     }
   ],
   "contractDetail": [
-    { "id": 1,
+    {
+      "id": 1,
       "contract": {
         "id": 1,
         "contractStartDate": "22/08/2020",

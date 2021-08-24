@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {IDivision} from '../../../model/division';
+import {IEducationDegree} from '../../../model/educationDegree';
+import {IPosition} from '../../../model/position';
+import {EmployeeService} from '../../../services/employee.service';
+import {DivisionService} from '../../../services/division.service';
+import {EducationDegreeService} from '../../../services/education-degree.service';
+import {PositionService} from '../../../services/position.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit-employee',
@@ -7,9 +16,65 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditEmployeeComponent implements OnInit {
 
-  constructor() { }
+  public contactForm: FormGroup;
+  divisions: IDivision[] = [];
+  educations: IEducationDegree[] = [];
+  positions: IPosition[] = [];
+  public employeeId: number;
 
-  ngOnInit(): void {
+  constructor(public employeeService: EmployeeService,
+              public divisionList: DivisionService,
+              public educationDegreeService: EducationDegreeService,
+              public positionService: PositionService,
+              public router: Router,
+              public activatedRoute: ActivatedRoute) {
   }
 
+  ngOnInit(): void {
+    this.initfrom();
+    this.getAllData();
+    this.activatedRoute.params.subscribe(data => {
+      this.employeeId = data.id;
+      console.log(this.employeeId);
+      this.employeeService.getEmployeeById(this.employeeId).subscribe(data2 => {
+        this.contactForm.patchValue(data2);
+        console.log(data2);
+      });
+    });
+  }
+
+  initfrom() {
+    this.contactForm = new FormGroup({
+      employeeCode: new FormControl('', [Validators.required, Validators.pattern('^NV-\\d{4}$')]),
+      employeeName: new FormControl('', [Validators.required]),
+      employeeBirthday: new FormControl('', [Validators.required]),
+      employeeIdCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}|\\d{12}$')]),
+      employeeSalary: new FormControl('', [Validators.required]),
+      employeePhone: new FormControl('', [Validators.required, Validators.pattern('^090\\d{7}|\\(84\\)\\+90\\d{7}|091\\d{7}|\\(84\\)\\+91\\d{7}$')]),
+      employeeEmail: new FormControl('', [Validators.required]),
+      employeeAddress: new FormControl('', [Validators.required]),
+      position: new FormControl('', [Validators.required]),
+      educationDegree: new FormControl('', [Validators.required]),
+      division: new FormControl('', [Validators.required])
+    });
+  }
+
+  getAllData() {
+    this.divisionList.getAllDivision().subscribe(data => {
+      this.divisions = data;
+    });
+    this.educationDegreeService.getAllEducation().subscribe(data => {
+      this.educations = data;
+    });
+    this.positionService.getAllPosition().subscribe(data => {
+      this.positions = data;
+    });
+  }
+
+
+  editEmployee() {
+    this.employeeService.editEmployee(this.contactForm.value, this.employeeId).subscribe(data => {
+      this.router.navigateByUrl('/employee-list');
+    });
+  }
 }

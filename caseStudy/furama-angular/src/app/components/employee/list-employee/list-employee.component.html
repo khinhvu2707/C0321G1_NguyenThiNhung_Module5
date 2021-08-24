@@ -54,7 +54,7 @@
       <td>{{employee.position.positionName}}</td>
       <td>{{employee.educationDegree.educationDegreeName}}</td>
       <td>{{employee.division.divisionName}}</td>
-      <td style="text-align: center"><a [routerLink]="['/employee-edit']">
+      <td style="text-align: center"><a [routerLink]="['/employee-edit/'+employee.id]">
         <button type="button" class="btn" style="background-color: #FADEED">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
                viewBox="0 0 16 16">

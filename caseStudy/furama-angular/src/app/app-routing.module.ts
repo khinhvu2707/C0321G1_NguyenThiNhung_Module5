@@ -30,7 +30,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'employee-list', component: ListEmployeeComponent},
   {path: 'employee-create', component: CreateEmployeeComponent},
-  {path: 'employee-edit', component: EditEmployeeComponent},
+  {path: 'employee-edit/:id', component: EditEmployeeComponent},
   {path: 'employee-view/:id', component: ViewEmployeeComponent},
   {path: 'customer-list', component: ListCustomerComponent},
   {path: 'customer-create', component: CreateCustomerComponent},
