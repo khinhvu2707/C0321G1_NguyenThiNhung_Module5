@@ -16,4 +16,16 @@ export class ContractService {
   getAllContract(): Observable<IContract[]> {
     return this.http.get<IContract[]>(this.API).pipe();
   }
+
+  deleteContract(id): Observable<any> {
+    return this.http.delete(this.API + '/' + id);
+  }
+
+  createNewContract(contract): Observable<IContract> {
+    return this.http.post<IContract>(this.API, contract).pipe();
+  }
+
+  editContract(contract, contractId): Observable<IContract> {
+    return this.http.put<IContract>(this.API + '/' + contractId, contract).pipe();
+  }
 }

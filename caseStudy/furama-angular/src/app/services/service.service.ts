@@ -16,4 +16,16 @@ export class ServiceService {
   getAllService(): Observable<IService[]> {
     return this.http.get<IService[]>(this.API).pipe();
   }
+
+  deleteService(id): Observable<any> {
+    return this.http.delete(this.API + '/' + id);
+  }
+
+  createNewService(service): Observable<IService> {
+    return this.http.post<IService>(this.API, service).pipe();
+  }
+
+  editService(service, serviceId): Observable<IService> {
+    return this.http.put<IService>(this.API + '/' + serviceId, service).pipe();
+  }
 }

@@ -48,7 +48,7 @@ export class CreateEmployeeComponent implements OnInit {
       employeeIdCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}|\\d{12}$')]),
       employeeSalary: new FormControl('', [Validators.required]),
       employeePhone: new FormControl('', [Validators.required, Validators.pattern('^090\\d{7}|\\(84\\)\\+90\\d{7}|091\\d{7}|\\(84\\)\\+91\\d{7}$')]),
-      employeeEmail: new FormControl('', [Validators.required]),
+      employeeEmail: new FormControl('', [Validators.required, Validators.email]),
       employeeAddress: new FormControl('', [Validators.required]),
       position: new FormControl('', [Validators.required]),
       educationDegree: new FormControl('', [Validators.required]),
