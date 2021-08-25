@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {EmployeeService} from '../../../services/employee.service';
-import {IEmployee} from '../../../model/employee';
 
 @Component({
   selector: 'app-view-employee',
@@ -9,7 +8,7 @@ import {IEmployee} from '../../../model/employee';
   styleUrls: ['./view-employee.component.css']
 })
 export class ViewEmployeeComponent implements OnInit {
-  employee: IEmployee[];
+  employees: any;
 
   constructor(private route: ActivatedRoute,
               public employeeService: EmployeeService) {
@@ -19,9 +18,8 @@ export class ViewEmployeeComponent implements OnInit {
     const employeeId = this.route.snapshot.paramMap.get('id');
     console.log(employeeId);
     this.employeeService.getEmployeeById(employeeId).subscribe(data => {
-      this.employee = data;
-      console.log(this.employee);
+      this.employees = Array.of(data);
+      console.log(this.employees);
     });
   }
-
 }

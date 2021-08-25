@@ -16,7 +16,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class EditEmployeeComponent implements OnInit {
 
-  public contactForm: FormGroup;
+  public employeeForm: FormGroup;
   divisions: IDivision[] = [];
   educations: IEducationDegree[] = [];
   positions: IPosition[] = [];
@@ -31,20 +31,20 @@ export class EditEmployeeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initfrom();
+    this.initFrom();
     this.getAllData();
     this.activatedRoute.params.subscribe(data => {
       this.employeeId = data.id;
       console.log(this.employeeId);
       this.employeeService.getEmployeeById(this.employeeId).subscribe(data2 => {
-        this.contactForm.patchValue(data2);
+        this.employeeForm.patchValue(data2);
         console.log(data2);
       });
     });
   }
 
-  initfrom() {
-    this.contactForm = new FormGroup({
+  initFrom() {
+    this.employeeForm = new FormGroup({
       employeeCode: new FormControl('', [Validators.required, Validators.pattern('^NV-\\d{4}$')]),
       employeeName: new FormControl('', [Validators.required]),
       employeeBirthday: new FormControl('', [Validators.required]),
@@ -73,8 +73,14 @@ export class EditEmployeeComponent implements OnInit {
 
 
   editEmployee() {
-    this.employeeService.editEmployee(this.contactForm.value, this.employeeId).subscribe(data => {
+    this.employeeService.editEmployee(this.employeeForm.value, this.employeeId).subscribe(data => {
       this.router.navigateByUrl('/employee-list');
     });
   }
+
+  compareFn(c1: any, c2: any): boolean {
+    return c1 && c2 ? c1.id === c2.id : c1 === c2;
+  }
+
+
 }

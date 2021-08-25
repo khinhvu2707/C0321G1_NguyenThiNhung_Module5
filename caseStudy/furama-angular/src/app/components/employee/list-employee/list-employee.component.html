@@ -27,11 +27,6 @@
     <tr style="background-color: #C6C6FA">
       <th scope="col" style="text-align: center">#</th>
       <th scope="col" style="text-align: center">Name</th>
-      <th scope="col" style="text-align: center">Birthday</th>
-      <th scope="col" style="text-align: center">Id Card</th>
-      <th scope="col" style="text-align: center">Salary</th>
-      <th scope="col" style="text-align: center">Phone</th>
-      <th scope="col" style="text-align: center">Email</th>
       <th scope="col" style="text-align: center">Address</th>
       <th scope="col" style="text-align: center">Position</th>
       <th scope="col" style="text-align: center">EducationDegree</th>
@@ -45,11 +40,6 @@
     <tr *ngFor="let employee of employees |filter:term | paginate: { itemsPerPage: 5, currentPage: p },let i=index ">
       <th>{{i + 1}}</th>
       <td>{{employee.employeeName}}</td>
-      <td>{{employee.employeeBirthday}}</td>
-      <td>{{employee.employeeIdCard}}</td>
-      <td>{{employee.employeeSalary}}</td>
-      <td>{{employee.employeePhone}}</td>
-      <td>{{employee.employeeEmail}}</td>
       <td>{{employee.employeeAddress}}</td>
       <td>{{employee.position.positionName}}</td>
       <td>{{employee.educationDegree.educationDegreeName}}</td>

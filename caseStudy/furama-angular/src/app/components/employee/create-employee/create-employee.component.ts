@@ -15,7 +15,7 @@ import {IDivision} from '../../../model/division';
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
-  public contactForm: FormGroup;
+  public employeeForm: FormGroup;
   divisions: IDivision[] = [];
   educations: IEducationDegree[] = [];
   positions: IPosition[] = [];
@@ -34,14 +34,14 @@ export class CreateEmployeeComponent implements OnInit {
 
 
   onSubmit() {
-    this.employeeService.createNewEmployee(this.contactForm.value).subscribe(data => {
-      console.log(this.contactForm.value);
+    this.employeeService.createNewEmployee(this.employeeForm.value).subscribe(data => {
+      console.log(this.employeeForm.value);
       this.router.navigateByUrl('/employee-list');
     });
   }
 
   initfrom() {
-    this.contactForm = new FormGroup({
+    this.employeeForm = new FormGroup({
       employeeCode: new FormControl('', [Validators.required, Validators.pattern('^NV-\\d{4}$')]),
       employeeName: new FormControl('', [Validators.required]),
       employeeBirthday: new FormControl('', [Validators.required]),

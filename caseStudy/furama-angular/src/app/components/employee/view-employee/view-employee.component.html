@@ -1,59 +1,64 @@
 <div class="alert mt-3" role="alert" style="background-color: #E8E7F5">
   <h4 class="alert-heading">Information Employee : </h4>
   <div>
-    <div class="card mb-3 rounded-3" style="width: 70%;margin:20px 15%">
+    <div class="card mb-3 rounded-3" style="width: 80%;margin:5px 10%">
       <div class="row no-gutters">
         <div class="col-md-6">
           <img src="assets/image/hoa9.jpg" style="width: 100%">
         </div>
         <div class="col-md-6">
           <div class="card-body">
-            <table style="text-align: center;width: 90%">
-              <tr><h5 class="card-title" style="text-align: center">Nhung</h5></tr>
-              <tr>
+           <h5 class="card-title" style="text-align: center;color: mediumpurple">Infomation of Employee</h5>
+            <table style="width: 100%">
+              <tr *ngFor="let employee of employees">
+                <td style="width: 20%"><img src="assets/image/icon.gif"></td>
+                <td style="width: 40%">Name :</td>
+                <td>{{employee.employeeName}}</td>
+              </tr>
+              <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Birthday :</td>
-                <td>{{employee}}</td>
+                <td>{{employee.employeeBirthday}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Id Card :</td>
-                <td></td>
+                <td>{{employee.employeeIdCard}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Salary :</td>
-                <td></td>
+                <td>{{employee.employeeSalary}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Phone :</td>
-                <td></td>
+                <td>{{employee.employeePhone}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Email :</td>
-                <td></td>
+                <td>{{employee.employeeEmail}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Address :</td>
-                <td></td>
+                <td>{{employee.employeeAddress}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Position :</td>
-                <td></td>
+                <td>{{employee.position.positionName}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>EducationDegree :</td>
-                <td></td>
+                <td>{{employee.educationDegree.educationDegreeName}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Division :</td>
-                <td></td>
+                <td>{{employee.division.divisionName}}</td>
               </tr>
             </table>
           </div>

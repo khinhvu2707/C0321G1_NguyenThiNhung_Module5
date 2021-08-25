@@ -70,25 +70,25 @@
       "id": 23
     },
     {
-      "employeeCode": "ffff",
+      "employeeCode": "NV-1111",
       "employeeName": "dddd",
       "employeeBirthday": "2021-08-26",
-      "employeeIdCard": "11",
+      "employeeIdCard": "111111111",
       "employeeSalary": "123",
-      "employeePhone": "111",
+      "employeePhone": "0901111111",
       "employeeEmail": "fffffffff",
       "employeeAddress": "s",
       "position": {
-        "id": 1,
-        "positionName": "Lễ Tân"
+        "id": 3,
+        "positionName": "Chuyên viên"
       },
       "educationDegree": {
-        "id": 1,
-        "educationDegreeName": "Trung cấp"
+        "id": 4,
+        "educationDegreeName": "Sau Đại học"
       },
       "division": {
-        "id": 1,
-        "divisionName": "Sale-Marketing"
+        "id": 3,
+        "divisionName": "Phục vụ"
       },
       "id": 24
     },

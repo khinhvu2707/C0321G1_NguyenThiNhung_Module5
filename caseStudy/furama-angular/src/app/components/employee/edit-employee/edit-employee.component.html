@@ -1,5 +1,5 @@
 <div class="mt-3 container-fluid mx-0 px-0 mb-3">
-  <form [formGroup]="contactForm" novalidate>
+  <form [formGroup]="employeeForm" novalidate>
     <div class="alert" role="alert" style="margin: 0 7%;background-color: #E8E7F5">
       <h4 class="alert-heading" style="text-align: center">Please enter the information below !</h4>
       <hr>
@@ -12,8 +12,8 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contactForm.controls.employeeCode?.valid && (contactForm.controls.employeeCode?.dirty
-           ||contactForm.controls.employeeCode?.touched)">
+          *ngIf="!employeeForm.controls.employeeCode?.valid && (employeeForm.controls.employeeCode?.dirty
+           ||employeeForm.controls.employeeCode?.touched)">
           First Name is not valid
         </div>
         <label class="col-md-4 control-label ">Name</label>
@@ -24,8 +24,8 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contactForm.controls.employeeName?.valid && (contactForm.controls.employeeName?.dirty
-           ||contactForm.controls.employeeName?.touched)">
+          *ngIf="!employeeForm.controls.employeeName?.valid && (employeeForm.controls.employeeName?.dirty
+           ||employeeForm.controls.employeeName?.touched)">
           First Name is not valid
         </div>
         <label class="col-md-4 control-label ">Birthday</label>
@@ -36,8 +36,8 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contactForm.controls.employeeBirthday?.valid && (contactForm.controls.employeeBirthday?.dirty
-           ||contactForm.controls.employeeBirthday?.touched)">
+          *ngIf="!employeeForm.controls.employeeBirthday?.valid && (employeeForm.controls.employeeBirthday?.dirty
+           ||employeeForm.controls.employeeBirthday?.touched)">
           First Name is not valid
         </div>
         <label class="col-md-4 control-label ">Id Card</label>
@@ -48,8 +48,8 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contactForm.controls.employeeIdCard?.valid && (contactForm.controls.employeeIdCard?.dirty
-           ||contactForm.controls.employeeIdCard?.touched)">
+          *ngIf="!employeeForm.controls.employeeIdCard?.valid && (employeeForm.controls.employeeIdCard?.dirty
+           ||employeeForm.controls.employeeIdCard?.touched)">
           First Name is not valid
         </div>
         <label class="col-md-4 control-label ">Salary</label>
@@ -60,8 +60,8 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contactForm.controls.employeeSalary?.valid && (contactForm.controls.employeeSalary?.dirty
-           ||contactForm.controls.employeeSalary?.touched)">
+          *ngIf="!employeeForm.controls.employeeSalary?.valid && (employeeForm.controls.employeeSalary?.dirty
+           ||employeeForm.controls.employeeSalary?.touched)">
           First Name is not valid
         </div>
         <label class="col-md-4 control-label ">Phone</label>
@@ -72,8 +72,8 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contactForm.controls.employeePhone?.valid && (contactForm.controls.employeePhone?.dirty
-           ||contactForm.controls.employeePhone?.touched)">
+          *ngIf="!employeeForm.controls.employeePhone?.valid && (employeeForm.controls.employeePhone?.dirty
+           ||employeeForm.controls.employeePhone?.touched)">
           First Name is not valid
         </div>
         <label class="col-md-4 control-label ">Email</label>
@@ -84,8 +84,8 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contactForm.controls.employeeEmail?.valid && (contactForm.controls.employeeEmail?.dirty
-           ||contactForm.controls.employeeEmail?.touched)">
+          *ngIf="!employeeForm.controls.employeeEmail?.valid && (employeeForm.controls.employeeEmail?.dirty
+           ||employeeForm.controls.employeeEmail?.touched)">
           First Name is not valid
         </div>
         <label class="col-md-4 control-label ">Address</label>
@@ -96,52 +96,64 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contactForm.controls.employeeCode?.valid && (contactForm.controls.employeeCode?.dirty
-           ||contactForm.controls.employeeCode?.touched)">
+          *ngIf="!employeeForm.controls.employeeCode?.valid && (employeeForm.controls.employeeCode?.dirty
+           ||employeeForm.controls.employeeCode?.touched)">
           First Name is not valid
         </div>
         <label class="col-md-4 control-label ">Position</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <select  formControlName="position" class="form-select" id="inputGroupSelect01">
+          <select [compareWith]="compareFn" formControlName="position" class="form-select" id="inputGroupSelect01">
             <option *ngFor="let item of positions" [ngValue]="item">{{item.positionName}}</option>
           </select>
         </div>
         <div
-          *ngIf="!contactForm.controls.position?.valid && (contactForm.controls.position?.dirty
-           ||contactForm.controls.position?.touched)">
+          *ngIf="!employeeForm.controls.position?.valid && (employeeForm.controls.position?.dirty
+           ||employeeForm.controls.position?.touched)">
           First Name is not valid
         </div>
         <label class="col-md-4 control-label ">EducationDegree</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <select  formControlName="educationDegree" class="form-select" id="inputGroupSelect02">
-            <option *ngFor="let item of educations" [ngValue]="item" >{{item.educationDegreeName}}</option>
+          <select [compareWith]="compareFn" formControlName="educationDegree" class="form-select"
+                  id="inputGroupSelect02">
+            <option *ngFor="let item of educations" [ngValue]="item">{{item.educationDegreeName}}</option>
           </select>
         </div>
         <div
-          *ngIf="!contactForm.controls.educationDegree?.valid && (contactForm.controls.educationDegree?.dirty
-           ||contactForm.controls.educationDegree?.touched)">
+          *ngIf="!employeeForm.controls.educationDegree?.valid && (employeeForm.controls.educationDegree?.dirty
+           ||employeeForm.controls.educationDegree?.touched)">
           First Name is not valid
         </div>
         <label class="col-md-4 control-label ">Division</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <select  formControlName="division" class="form-select" id="inputGroupSelect03">
+          <select [compareWith]="compareFn" formControlName="division" class="form-select" id="inputGroupSelect03">
             <option *ngFor="let item of divisions" [ngValue]="item">{{item.divisionName}}</option>
           </select>
         </div>
         <div
-          *ngIf="!contactForm.controls.division?.valid && (contactForm.controls.division?.dirty
-           ||contactForm.controls.division?.touched)">
+          *ngIf="!employeeForm.controls.division?.valid && (employeeForm.controls.division?.dirty
+           ||employeeForm.controls.division?.touched)">
           First Name is not valid
         </div>
       </div>
       <hr>
       <div class="row table-responsive">
-        <div class="col-10"></div>
+        <div class="col-1"></div>
+        <div class="col-9">
+          <button [routerLink]="['/employee-list']" type="button" class="btn m-2" style="background-color: #9EDEED">
+            Back to List Employee
+          </button>
+        </div>
         <div class="col-2">
-          <button (click)="editEmployee()" type="submit" class="btn m-2" style="background-color: #8ADA9E" [disabled]="!contactForm.valid">
+          <button (click)="editEmployee()" type="submit" class="btn m-2" style="background-color: #9EDEED"
+                  [disabled]="!employeeForm.valid">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor"
+                 viewBox="0 0 16 16">
+              <path
+                d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52 2.25 8.184z"/>
+            </svg>
             Edit
           </button>
         </div>
