@@ -1,5 +1,5 @@
 <div class="mt-3 mb-3">
-  <form #createService ="ngForm" (ngSubmit)="createForm(createService)">
+  <form [formGroup]="serviceForm" novalidate>
     <div class="alert" role="alert" style="margin: 0 7%;background-color: #E8E7F5">
       <h4 class="alert-heading" style="text-align: center">Please enter the information below !</h4>
       <hr>
@@ -7,75 +7,146 @@
         <label class="col-md-4 control-label ">Service Code</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="code" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="serviceCode" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!serviceForm.controls.serviceCode?.valid && (serviceForm.controls.serviceCode?.dirty
+           ||serviceForm.controls.serviceCode?.touched)">
+          Service Code is not valid
         </div>
         <label class="col-md-4 control-label ">Service Name</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="name" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="serviceName" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!serviceForm.controls.serviceName?.valid && (serviceForm.controls.serviceName?.dirty
+           ||serviceForm.controls.serviceName?.touched)">
+          Service Name is not valid
         </div>
         <label class="col-md-4 control-label ">Service Area</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="area" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="serviceArea" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!serviceForm.controls.serviceArea?.valid && (serviceForm.controls.serviceArea?.dirty
+           ||serviceForm.controls.serviceArea?.touched)">
+          Service Area is not valid
         </div>
         <label class="col-md-4 control-label ">Service Cost</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="cost" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="serviceCost" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!serviceForm.controls.serviceCost?.valid && (serviceForm.controls.serviceCost?.dirty
+           ||serviceForm.controls.serviceCost?.touched)">
+          Service Cost is not valid
+        </div>
+        <label class="col-md-4 control-label ">Service Max People</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
+          <input formControlName="serviceMaxPeople" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+                 aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!serviceForm.controls.serviceMaxPeople?.valid && (serviceForm.controls.serviceMaxPeople?.dirty
+           ||serviceForm.controls.serviceMaxPeople?.touched)">
+          Service Max People is not valid
         </div>
         <label class="col-md-4 control-label ">Rent Type</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <select ngModel name="rentType" class="form-select" id="inputGroupSelect01">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select formControlName="rentType" class="form-select" id="inputGroupSelect0">
+            <option *ngFor="let item of rentTypes" [ngValue]="item">{{item.rentTypeName}}</option>
           </select>
+        </div>
+        <div
+          *ngIf="!serviceForm.controls.rentType?.valid && (serviceForm.controls.rentType?.dirty
+           ||serviceForm.controls.rentType?.touched)">
+          Rent Type is not valid
         </div>
         <label class="col-md-4 control-label ">Service Type</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <select ngModel name="serviceType" class="form-select" id="inputGroupSelect02">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select formControlName="serviceType" class="form-select" id="inputGroupSelect01">
+            <option *ngFor="let item of serviceTypes" [ngValue]="item">{{item.serviceTypeName}}</option>
           </select>
         </div>
-        <label class="col-md-4 control-label ">StandardRoom</label>
+        <div
+          *ngIf="!serviceForm.controls.serviceType?.valid && (serviceForm.controls.serviceType?.dirty
+           ||serviceForm.controls.serviceType?.touched)">
+          Service Type is not valid
+        </div>
+        <label class="col-md-4 control-label ">Standard Room</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="standardRoom" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="standardRoom" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!serviceForm.controls.standardRoom?.valid && (serviceForm.controls.standardRoom?.dirty
+           ||serviceForm.controls.standardRoom?.touched)">
+          Standard Room is not valid
         </div>
         <label class="col-md-4 control-label ">Description Other Convenience</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="descriptionOtherConvenience" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!serviceForm.controls.descriptionOtherConvenience?.valid && (serviceForm.controls.descriptionOtherConvenience?.dirty
+           ||serviceForm.controls.descriptionOtherConvenience?.touched)">
+          Description Other Convenience is not valid
         </div>
         <label class="col-md-4 control-label ">Pool Area</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="poolArea" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="poolArea" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!serviceForm.controls.poolArea?.valid && (serviceForm.controls.poolArea?.dirty
+           ||serviceForm.controls.poolArea?.touched)">
+          Pool Area is not valid
         </div>
         <label class="col-md-4 control-label ">Number Of Floor</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input ngModel name="numberOfFloor" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="numberOfFloor" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!serviceForm.controls.numberOfFloor?.valid && (serviceForm.controls.numberOfFloor?.dirty
+           ||serviceForm.controls.numberOfFloor?.touched)">
+          Number Of Floor is not valid
         </div>
       </div>
       <hr>
-      <div class="mb-0" style="margin: 0 90%">
-        <button type="submit" class="btn m-2" style="background-color: #8ADA9E">Create</button>
+      <div class="row table-responsive">
+        <div class="col-1"></div>
+        <div class="col-8">
+          <button [routerLink]="['/service-list']" type="button" class="btn m-2" style="background-color: #9EDEED">
+            Back to List Service
+          </button>
+        </div>
+        <div class="col-3">
+          <button (click)="onSubmit()" type="submit" class="btn m-2" style="background-color: #8ADA9E"
+                  [disabled]="!serviceForm.valid">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor"
+                 viewBox="0 0 16 16">
+              <path
+                d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52 2.25 8.184z"/>
+            </svg>
+            Create
+          </button>
+        </div>
       </div>
     </div>
   </form>

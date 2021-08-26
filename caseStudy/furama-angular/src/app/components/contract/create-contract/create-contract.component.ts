@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
+import {CustomerService} from '../../../services/customer.service';
+import {Router} from '@angular/router';
+import {IEmployee} from '../../../model/employee';
+import {ICustomer} from '../../../model/customer';
+import {IService} from '../../../model/service';
+import {EmployeeService} from '../../../services/employee.service';
+import {ServiceService} from '../../../services/service.service';
+import {ContractService} from '../../../services/contract.service';
 
 @Component({
   selector: 'app-create-contract',
@@ -7,13 +15,58 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./create-contract.component.css']
 })
 export class CreateContractComponent implements OnInit {
+  public contractForm: FormGroup;
+  public customers: ICustomer[] = [];
+  public employees: IEmployee[] = [];
+  public services: IService[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(public customerService: CustomerService,
+              public employeeService: EmployeeService,
+              public serviceService: ServiceService,
+              public contractService: ContractService,
+              public router: Router) {
   }
 
-  createForm(createContract: NgForm) {
-    console.log(createContract.value);
+  ngOnInit(): void {
+    this.initfrom();
+    this.getAllCustomer();
+    this.getAllEmployee();
+    this.getAllService();
+  }
+
+
+  onSubmit() {
+    this.contractService.createNewContract(this.contractForm.value).subscribe(data => {
+      console.log(this.contractForm.value);
+      this.router.navigateByUrl('/contract-list');
+    });
+  }
+
+  initfrom() {
+    this.contractForm = new FormGroup({
+      contractStartDate: new FormControl('', [Validators.required]),
+      contractEndDate: new FormControl('', [Validators.required]),
+      contractDeposit: new FormControl('', [Validators.required]),
+      contractTotalMoney: new FormControl('', [Validators.required]),
+      employee: new FormControl('', [Validators.required]),
+      customer: new FormControl('', [Validators.required]),
+      service: new FormControl('', [Validators.required])
+    });
+  }
+
+  getAllEmployee() {
+    this.employeeService.getAllEmployee().subscribe(data => {
+      this.employees = data;
+    });
+  }
+  getAllCustomer() {
+    this.customerService.getAllCustomer().subscribe(data => {
+      this.customers = data;
+    });
+  }
+  getAllService() {
+    this.serviceService.getAllService().subscribe(data => {
+      this.services = data;
+    });
   }
 }

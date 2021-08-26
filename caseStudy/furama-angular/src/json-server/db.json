@@ -71,29 +71,6 @@
     },
     {
       "employeeCode": "NV-1111",
-      "employeeName": "dddd",
-      "employeeBirthday": "2021-08-26",
-      "employeeIdCard": "111111111",
-      "employeeSalary": "123",
-      "employeePhone": "0901111111",
-      "employeeEmail": "fffffffff",
-      "employeeAddress": "s",
-      "position": {
-        "id": 3,
-        "positionName": "Chuyên viên"
-      },
-      "educationDegree": {
-        "id": 4,
-        "educationDegreeName": "Sau Đại học"
-      },
-      "division": {
-        "id": 3,
-        "divisionName": "Phục vụ"
-      },
-      "id": 24
-    },
-    {
-      "employeeCode": "NV-1111",
       "employeeName": "Nhiii",
       "employeeBirthday": "2021-08-27",
       "employeeIdCard": "111111111",
@@ -274,6 +251,21 @@
       "customerPhone": 123,
       "customerEmail": "abc",
       "customerAddress": "xyz"
+    },
+    {
+      "customerCode": "KH-0000",
+      "customerType": {
+        "id": 4,
+        "customerTypeName": "Silver"
+      },
+      "customerName": "Hic",
+      "customerBirthday": "2021-08-28",
+      "customerGender": "1",
+      "customerIdCard": "111111111",
+      "customerPhone": "0901111111",
+      "customerEmail": "nhung@gmail.com",
+      "customerAddress": "Nghệ An",
+      "id": 4
     }
   ],
   "service": [
@@ -297,6 +289,27 @@
       "descriptionOtherConvenience": "không",
       "poolArea": 20,
       "numberOfFloor": 10
+    },
+    {
+      "serviceCode": "DV-0000",
+      "serviceName": "Vip2",
+      "serviceArea": "12",
+      "serviceCost": "12",
+      "serviceMaxPeople": "6",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Month",
+        "rentTypeCost": "500000"
+      },
+      "serviceType": {
+        "id": 2,
+        "serviceTypeName": "House"
+      },
+      "standardRoom": "tốt",
+      "descriptionOtherConvenience": "không",
+      "poolArea": "123",
+      "numberOfFloor": "12",
+      "id": 2
     }
   ],
   "attachService": [
@@ -402,6 +415,138 @@
         "poolArea": 20,
         "numberOfFloor": 10
       }
+    },
+    {
+      "contractStartDate": "2021-08-28",
+      "contractEndDate": "2021-08-29",
+      "contractDeposit": "1",
+      "contractTotalMoney": "11111",
+      "employee": {
+        "employeeCode": "NV-0001",
+        "employeeName": "Nhi",
+        "employeeBirthday": "2021-08-26",
+        "employeeIdCard": "111211111",
+        "employeeSalary": 123,
+        "employeePhone": "0901111111",
+        "employeeEmail": "nhi@gmail.com",
+        "employeeAddress": "Nghệ An",
+        "position": {
+          "id": 1,
+          "positionName": "Lễ Tân"
+        },
+        "educationDegree": {
+          "id": 1,
+          "educationDegreeName": "Trung cấp"
+        },
+        "division": {
+          "id": 1,
+          "divisionName": "Sale-Marketing"
+        },
+        "id": 2
+      },
+      "customer": {
+        "customerCode": "KH-0000",
+        "customerType": {
+          "id": 4,
+          "customerTypeName": "Silver"
+        },
+        "customerName": "Hic",
+        "customerBirthday": "2021-08-28",
+        "customerGender": "1",
+        "customerIdCard": "111111111",
+        "customerPhone": "0901111111",
+        "customerEmail": "nhung@gmail.com",
+        "customerAddress": "Nghệ An",
+        "id": 4
+      },
+      "service": {
+        "id": 1,
+        "serviceCode": "SV-0000",
+        "serviceName": "Vip1",
+        "serviceArea": 123,
+        "serviceCost": 123,
+        "serviceMaxPeople": 1,
+        "rentType": {
+          "id": 1,
+          "rentTypeName": "Year",
+          "rentTypeCost": "1000000"
+        },
+        "serviceType": {
+          "id": 1,
+          "serviceTypeName": "Villa"
+        },
+        "standardRoom": "1 sao",
+        "descriptionOtherConvenience": "không",
+        "poolArea": 20,
+        "numberOfFloor": 10
+      },
+      "id": 2
+    },
+    {
+      "contractStartDate": "2021-08-20",
+      "contractEndDate": "2021-08-27",
+      "contractDeposit": "1",
+      "contractTotalMoney": "12",
+      "employee": {
+        "employeeCode": "NV-1111",
+        "employeeName": "dddd",
+        "employeeBirthday": "2021-08-26",
+        "employeeIdCard": "111111111",
+        "employeeSalary": "123",
+        "employeePhone": "0901111111",
+        "employeeEmail": "fffffffff",
+        "employeeAddress": "s",
+        "position": {
+          "id": 3,
+          "positionName": "Chuyên viên"
+        },
+        "educationDegree": {
+          "id": 4,
+          "educationDegreeName": "Sau Đại học"
+        },
+        "division": {
+          "id": 3,
+          "divisionName": "Phục vụ"
+        },
+        "id": 24
+      },
+      "customer": {
+        "customerCode": "KH-0000",
+        "customerType": {
+          "id": 4,
+          "customerTypeName": "Silver"
+        },
+        "customerName": "Hic",
+        "customerBirthday": "2021-08-28",
+        "customerGender": "1",
+        "customerIdCard": "111111111",
+        "customerPhone": "0901111111",
+        "customerEmail": "nhung@gmail.com",
+        "customerAddress": "Nghệ An",
+        "id": 4
+      },
+      "service": {
+        "id": 1,
+        "serviceCode": "SV-0000",
+        "serviceName": "Vip1",
+        "serviceArea": 123,
+        "serviceCost": 123,
+        "serviceMaxPeople": 1,
+        "rentType": {
+          "id": 1,
+          "rentTypeName": "Year",
+          "rentTypeCost": "1000000"
+        },
+        "serviceType": {
+          "id": 1,
+          "serviceTypeName": "Villa"
+        },
+        "standardRoom": "1 sao",
+        "descriptionOtherConvenience": "không",
+        "poolArea": 20,
+        "numberOfFloor": 10
+      },
+      "id": 3
     }
   ],
   "contractDetail": [
@@ -481,6 +626,83 @@
         "attachServiceStatus": "empty"
       },
       "quantity": 123
+    },
+    {
+      "contract": {
+        "contractStartDate": "2021-08-20",
+        "contractEndDate": "2021-08-27",
+        "contractDeposit": "1",
+        "contractTotalMoney": "12",
+        "employee": {
+          "employeeCode": "NV-1111",
+          "employeeName": "dddd",
+          "employeeBirthday": "2021-08-26",
+          "employeeIdCard": "111111111",
+          "employeeSalary": "123",
+          "employeePhone": "0901111111",
+          "employeeEmail": "fffffffff",
+          "employeeAddress": "s",
+          "position": {
+            "id": 3,
+            "positionName": "Chuyên viên"
+          },
+          "educationDegree": {
+            "id": 4,
+            "educationDegreeName": "Sau Đại học"
+          },
+          "division": {
+            "id": 3,
+            "divisionName": "Phục vụ"
+          },
+          "id": 24
+        },
+        "customer": {
+          "customerCode": "KH-0000",
+          "customerType": {
+            "id": 4,
+            "customerTypeName": "Silver"
+          },
+          "customerName": "Hic",
+          "customerBirthday": "2021-08-28",
+          "customerGender": "1",
+          "customerIdCard": "111111111",
+          "customerPhone": "0901111111",
+          "customerEmail": "nhung@gmail.com",
+          "customerAddress": "Nghệ An",
+          "id": 4
+        },
+        "service": {
+          "id": 1,
+          "serviceCode": "SV-0000",
+          "serviceName": "Vip1",
+          "serviceArea": 123,
+          "serviceCost": 123,
+          "serviceMaxPeople": 1,
+          "rentType": {
+            "id": 1,
+            "rentTypeName": "Year",
+            "rentTypeCost": "1000000"
+          },
+          "serviceType": {
+            "id": 1,
+            "serviceTypeName": "Villa"
+          },
+          "standardRoom": "1 sao",
+          "descriptionOtherConvenience": "không",
+          "poolArea": 20,
+          "numberOfFloor": 10
+        },
+        "id": 3
+      },
+      "attachService": {
+        "id": 3,
+        "attachServiceName": "Food",
+        "attachServiceCost": 50000,
+        "attachServiceUnit": 1,
+        "attachServiceStatus": "empty"
+      },
+      "quantity": "1",
+      "id": 2
     }
   ]
 }
