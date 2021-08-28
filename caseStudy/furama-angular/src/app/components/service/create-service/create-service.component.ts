@@ -1,16 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
-import {IContract} from '../../../model/contract';
-import {IAttachService} from '../../../model/attachService';
-import {ContractDetailService} from '../../../services/contract-detail.service';
-import {AttachServiceService} from '../../../services/attach-service.service';
-import {ContractService} from '../../../services/contract.service';
 import {Router} from '@angular/router';
 import {IRentType} from '../../../model/rentType';
 import {IServiceType} from '../../../model/serviceType';
 import {ServiceService} from '../../../services/service.service';
 import {RentTypeService} from '../../../services/rent-type.service';
 import {ServiceTypeService} from '../../../services/service-type.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-service',
@@ -25,7 +21,7 @@ export class CreateServiceComponent implements OnInit {
   constructor(public serviceService: ServiceService,
               public rentTypeService: RentTypeService,
               public serviceTypeService: ServiceTypeService,
-              public router: Router) {
+              public router: Router, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -39,6 +35,7 @@ export class CreateServiceComponent implements OnInit {
     this.serviceService.createNewService(this.serviceForm.value).subscribe(data => {
       console.log(this.serviceForm.value);
       this.router.navigateByUrl('/service-list');
+      this.toastr.success('Thanks!', 'Create new Service successfully !');
     });
   }
 

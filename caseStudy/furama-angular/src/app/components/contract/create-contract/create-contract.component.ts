@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../../../services/customer.service';
 import {Router} from '@angular/router';
 import {IEmployee} from '../../../model/employee';
@@ -8,6 +8,7 @@ import {IService} from '../../../model/service';
 import {EmployeeService} from '../../../services/employee.service';
 import {ServiceService} from '../../../services/service.service';
 import {ContractService} from '../../../services/contract.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-contract',
@@ -24,7 +25,8 @@ export class CreateContractComponent implements OnInit {
               public employeeService: EmployeeService,
               public serviceService: ServiceService,
               public contractService: ContractService,
-              public router: Router) {
+              public router: Router,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -39,6 +41,7 @@ export class CreateContractComponent implements OnInit {
     this.contractService.createNewContract(this.contractForm.value).subscribe(data => {
       console.log(this.contractForm.value);
       this.router.navigateByUrl('/contract-list');
+      this.toastr.success('Thanks!', 'create new Contract successfully !');
     });
   }
 

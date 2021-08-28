@@ -8,6 +8,7 @@ import {DivisionService} from '../../../services/division.service';
 import {EducationDegreeService} from '../../../services/education-degree.service';
 import {PositionService} from '../../../services/position.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-employee',
@@ -27,7 +28,8 @@ export class EditEmployeeComponent implements OnInit {
               public educationDegreeService: EducationDegreeService,
               public positionService: PositionService,
               public router: Router,
-              public activatedRoute: ActivatedRoute) {
+              public activatedRoute: ActivatedRoute,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -75,6 +77,7 @@ export class EditEmployeeComponent implements OnInit {
   editEmployee() {
     this.employeeService.editEmployee(this.employeeForm.value, this.employeeId).subscribe(data => {
       this.router.navigateByUrl('/employee-list');
+      this.toastr.success('Thanks!', 'Edit new Employee successfully !');
     });
   }
 

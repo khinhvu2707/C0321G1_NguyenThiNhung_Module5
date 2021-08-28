@@ -12,9 +12,13 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!employeeForm.controls.employeeCode?.valid && (employeeForm.controls.employeeCode?.dirty
-           ||employeeForm.controls.employeeCode?.touched)">
-          First Name is not valid
+          *ngIf="!employeeForm.controls.employeeCode?.valid && (employeeForm.controls.employeeCode?.dirty || employeeForm.controls.employeeCode?.touched)">
+          <div [hidden]="!employeeForm.controls.employeeCode.errors.required">
+            <p style="color: red">Employee Code is required!</p>
+          </div>
+          <div [hidden]="!employeeForm.controls.employeeCode.errors.pattern">
+            <p style="color: red">Employee Code is not valid ( NV-xxxx ) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Name</label>
         <div class="input-group mb-3">
@@ -26,7 +30,7 @@
         <div
           *ngIf="!employeeForm.controls.employeeName?.valid && (employeeForm.controls.employeeName?.dirty
            ||employeeForm.controls.employeeName?.touched)">
-          First Name is not valid
+          <p style="color: red">Name is required!</p>
         </div>
         <label class="col-md-4 control-label ">Birthday</label>
         <div class="input-group mb-3">
@@ -38,7 +42,7 @@
         <div
           *ngIf="!employeeForm.controls.employeeBirthday?.valid && (employeeForm.controls.employeeBirthday?.dirty
            ||employeeForm.controls.employeeBirthday?.touched)">
-          First Name is not valid
+          <p style="color: red">Birthday is required!</p>
         </div>
         <label class="col-md-4 control-label ">Id Card</label>
         <div class="input-group mb-3">
@@ -48,9 +52,13 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!employeeForm.controls.employeeIdCard?.valid && (employeeForm.controls.employeeIdCard?.dirty
-           ||employeeForm.controls.employeeIdCard?.touched)">
-          First Name is not valid
+          *ngIf="!employeeForm.controls.employeeIdCard?.valid && (employeeForm.controls.employeeIdCard?.dirty || employeeForm.controls.employeeIdCard?.touched)">
+          <div [hidden]="!employeeForm.controls.employeeIdCard.errors.required">
+            <p style="color: red">Employee Id Card is required!</p>
+          </div>
+          <div [hidden]="!employeeForm.controls.employeeIdCard.errors.pattern">
+            <p style="color: red">Employee Id Card is not valid (9 or 12 number) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Salary</label>
         <div class="input-group mb-3">
@@ -62,7 +70,7 @@
         <div
           *ngIf="!employeeForm.controls.employeeSalary?.valid && (employeeForm.controls.employeeSalary?.dirty
            ||employeeForm.controls.employeeSalary?.touched)">
-          First Name is not valid
+          <p style="color: red">Salary is required!</p>
         </div>
         <label class="col-md-4 control-label ">Phone</label>
         <div class="input-group mb-3">
@@ -72,9 +80,13 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!employeeForm.controls.employeePhone?.valid && (employeeForm.controls.employeePhone?.dirty
-           ||employeeForm.controls.employeePhone?.touched)">
-          First Name is not valid
+          *ngIf="!employeeForm.controls.employeePhone?.valid && (employeeForm.controls.employeePhone?.dirty || employeeForm.controls.employeePhone?.touched)">
+          <div [hidden]="!employeeForm.controls.employeePhone.errors.required">
+            <p style="color: red">Employee Phone is required!</p>
+          </div>
+          <div [hidden]="!employeeForm.controls.employeePhone.errors.pattern">
+            <p style="color: red">Employee Phone is not valid!( 090xxxxxxx-(84)+90xxxxxxx-091xxxxxxx-(84)+91xxxxxxx )</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Email</label>
         <div class="input-group mb-3">
@@ -84,9 +96,13 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!employeeForm.controls.employeeEmail?.valid && (employeeForm.controls.employeeEmail?.dirty
-           ||employeeForm.controls.employeeEmail?.touched)">
-          First Name is not valid
+          *ngIf="!employeeForm.controls.employeeEmail?.valid && (employeeForm.controls.employeeEmail?.dirty || employeeForm.controls.employeeEmail?.touched)">
+          <div [hidden]="!employeeForm.controls.employeeEmail.errors.required">
+            <p style="color: red">Employee Email is required!</p>
+          </div>
+          <div [hidden]="!employeeForm.controls.employeeEmail.errors.email">
+            <p style="color: red">Employee Email is not valid!</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Address</label>
         <div class="input-group mb-3">
@@ -98,7 +114,7 @@
         <div
           *ngIf="!employeeForm.controls.employeeCode?.valid && (employeeForm.controls.employeeCode?.dirty
            ||employeeForm.controls.employeeCode?.touched)">
-          First Name is not valid
+          <p style="color: red">Address is required!</p>
         </div>
         <label class="col-md-4 control-label ">Position</label>
         <div class="input-group mb-3">
@@ -110,7 +126,7 @@
         <div
           *ngIf="!employeeForm.controls.position?.valid && (employeeForm.controls.position?.dirty
            ||employeeForm.controls.position?.touched)">
-          First Name is not valid
+          <p style="color: red">Position is required!</p>
         </div>
         <label class="col-md-4 control-label ">EducationDegree</label>
         <div class="input-group mb-3">
@@ -123,7 +139,7 @@
         <div
           *ngIf="!employeeForm.controls.educationDegree?.valid && (employeeForm.controls.educationDegree?.dirty
            ||employeeForm.controls.educationDegree?.touched)">
-          First Name is not valid
+          <p style="color: red">Education Degree is required!</p>
         </div>
         <label class="col-md-4 control-label ">Division</label>
         <div class="input-group mb-3">
@@ -135,7 +151,7 @@
         <div
           *ngIf="!employeeForm.controls.division?.valid && (employeeForm.controls.division?.dirty
            ||employeeForm.controls.division?.touched)">
-          First Name is not valid
+          <p style="color: red">Division is required!</p>
         </div>
       </div>
       <hr>

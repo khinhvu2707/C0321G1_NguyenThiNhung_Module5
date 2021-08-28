@@ -13,7 +13,7 @@ export class EmployeeService {
   }
 
   getAllEmployee(): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(this.API).pipe();
+    return this.http.get<IEmployee[]>(this.API);
   }
 
   getEmployeeById(id): Observable<IEmployee[]> {

@@ -6,6 +6,7 @@ import {IContract} from '../../../model/contract';
 import {ContractDetailService} from '../../../services/contract-detail.service';
 import {AttachServiceService} from '../../../services/attach-service.service';
 import {IAttachService} from '../../../model/attachService';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-contract-detail',
@@ -20,7 +21,7 @@ export class CreateContractDetailComponent implements OnInit {
   constructor(public contractDetailService: ContractDetailService,
               public attachService: AttachServiceService,
               public contractService: ContractService,
-              public router: Router) {
+              public router: Router, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -34,6 +35,7 @@ export class CreateContractDetailComponent implements OnInit {
     this.contractDetailService.createNewContractDetail(this.contractDetailForm.value).subscribe(data => {
       console.log(this.contractDetailForm.value);
       this.router.navigateByUrl('/contract-detail-list');
+      this.toastr.success('Thanks!', 'Create new Contract detail successfully !');
     });
   }
 

@@ -1,0 +1,28 @@
+<h1 xmlns="http://www.w3.org/1999/html">Danh sách sản phẩm</h1>
+<table class="table table-bordered table-hover text-center">
+  <thead>
+  <tr>
+    <td>STT</td>
+    <td>Tên</td>
+    <td>Giá</td>
+    <td>Mô tả</td>
+    <td>Danh mục</td>
+    <td colspan="2">Action</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.category.categoryName}}</td>
+    <td>
+      <a [routerLink]="['/product/edit',product.id]"> Edit</a>
+    </td>
+    <td>
+      <a [routerLink]="['/product/delete',product.id]"> Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,48 @@
+{
+  "product": [
+    {
+      "id": 2,
+      "name": "IPhone 113",
+      "price": 15600007,
+      "description": "Like new 1%",
+      "category": {
+        "id": 1,
+        "categoryName": "IPhone"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Dell",
+      "price": 123,
+      "description": "new 100%",
+      "category": {
+        "id": 3,
+        "categoryName": "Laptop"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Samsung Galaxy S10+",
+      "price": 1234567,
+      "description": "new 99%",
+      "category": {
+        "id": 2,
+        "categoryName": "Samsung"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "categoryName": "IPhone"
+    },
+    {
+      "id": 2,
+      "categoryName": "Samsung"
+    },
+    {
+      "id": 3,
+      "categoryName": "Laptop"
+    }
+  ]
+}

@@ -26,6 +26,7 @@
     <thead>
     <tr style="background-color: #C6C6FA">
       <th scope="col" style="text-align: center">#</th>
+      <th scope="col" style="text-align: center">id</th>
       <th scope="col" style="text-align: center">Name</th>
       <th scope="col" style="text-align: center">Address</th>
       <th scope="col" style="text-align: center">Position</th>
@@ -39,6 +40,7 @@
     <tbody>
     <tr *ngFor="let employee of employees |filter:term | paginate: { itemsPerPage: 5, currentPage: p },let i=index ">
       <th>{{i + 1}}</th>
+      <td>{{employee.id}}</td>
       <td>{{employee.employeeName}}</td>
       <td>{{employee.employeeAddress}}</td>
       <td>{{employee.position.positionName}}</td>
@@ -55,7 +57,8 @@
         </button>
       </a></td>
       <td style="text-align: center">
-        <button (click)="openDialog(employee.id)" type="button" class="btn" style="background-color: #CBEDE3" data-toggle="modal"
+        <button (click)="openDialog(employee.id)" type="button" class="btn" style="background-color: #CBEDE3"
+                data-toggle="modal"
                 data-target="#exampleModal">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser"
                viewBox="0 0 16 16">

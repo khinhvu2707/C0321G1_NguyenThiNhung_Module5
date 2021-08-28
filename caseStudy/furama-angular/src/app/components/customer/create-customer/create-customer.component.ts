@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../../../services/customer.service';
 import {CustomerTypeService} from '../../../services/customer-type.service';
 import {Router} from '@angular/router';
 import {ICustomerType} from '../../../model/customerType';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-customer',
@@ -16,7 +17,7 @@ export class CreateCustomerComponent implements OnInit {
 
   constructor(public customerService: CustomerService,
               public customerTypeList: CustomerTypeService,
-              public router: Router) {
+              public router: Router, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class CreateCustomerComponent implements OnInit {
     this.customerService.createNewCustomer(this.customerForm.value).subscribe(data => {
       console.log(this.customerForm.value);
       this.router.navigateByUrl('/customer-list');
+      this.toastr.success('Thanks!', 'Create new Customer successfully !');
     });
   }
 

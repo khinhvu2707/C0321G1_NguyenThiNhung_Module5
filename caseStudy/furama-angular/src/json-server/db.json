@@ -1,13 +1,13 @@
 {
   "employees": [
     {
-      "employeeCode": "NV-0001",
-      "employeeName": "Nhi",
+      "employeeCode": "NV-1111",
+      "employeeName": "ff",
       "employeeBirthday": "2021-08-26",
-      "employeeIdCard": "111211111",
-      "employeeSalary": 123,
+      "employeeIdCard": "111111111",
+      "employeeSalary": "11",
       "employeePhone": "0901111111",
-      "employeeEmail": "nhi@gmail.com",
+      "employeeEmail": "nhung@gmail",
       "employeeAddress": "Nghệ An",
       "position": {
         "id": 1,
@@ -18,102 +18,10 @@
         "educationDegreeName": "Trung cấp"
       },
       "division": {
-        "id": 1,
-        "divisionName": "Sale-Marketing"
-      },
-      "id": 2
-    },
-    {
-      "employeeCode": "123",
-      "employeeName": "Tình Tuyết",
-      "employeeBirthday": "2021-08-26",
-      "employeeIdCard": "12",
-      "employeeSalary": "1",
-      "employeePhone": "123",
-      "employeeEmail": "gđaaaaa",
-      "employeeAddress": "hi",
-      "position": {
-        "id": 4,
-        "positionName": "Giám sát"
-      },
-      "educationDegree": {
-        "id": 4,
-        "educationDegreeName": "Sau Đại học"
-      },
-      "division": {
-        "id": 1,
-        "divisionName": "Sale-Marketing"
-      },
-      "id": 13
-    },
-    {
-      "employeeCode": "222222222",
-      "employeeName": "hihi",
-      "employeeBirthday": "2021-08-26",
-      "employeeIdCard": "111",
-      "employeeSalary": "11",
-      "employeePhone": "234",
-      "employeeEmail": "12",
-      "employeeAddress": "hhhhhhhhh",
-      "position": {
-        "id": 6,
-        "positionName": "Giám đốc"
-      },
-      "educationDegree": {
-        "id": 4,
-        "educationDegreeName": "Sau Đại học"
-      },
-      "division": {
         "id": 4,
         "divisionName": "Quản lý"
       },
-      "id": 23
-    },
-    {
-      "employeeCode": "NV-1111",
-      "employeeName": "Nhiii",
-      "employeeBirthday": "2021-08-27",
-      "employeeIdCard": "111111111",
-      "employeeSalary": "12",
-      "employeePhone": "0901111111",
-      "employeeEmail": "dddđ",
-      "employeeAddress": "dd",
-      "position": {
-        "id": 6,
-        "positionName": "Giám đốc"
-      },
-      "educationDegree": {
-        "id": 3,
-        "educationDegreeName": "Đại học"
-      },
-      "division": {
-        "id": 3,
-        "divisionName": "Phục vụ"
-      },
-      "id": 25
-    },
-    {
-      "employeeCode": "NV-1111",
-      "employeeName": "fh",
-      "employeeBirthday": "2021-08-25",
-      "employeeIdCard": "121111111",
-      "employeeSalary": "12",
-      "employeePhone": "0901111111",
-      "employeeEmail": "hi",
-      "employeeAddress": "hi",
-      "position": {
-        "id": 1,
-        "positionName": "Lễ Tân"
-      },
-      "educationDegree": {
-        "id": 4,
-        "educationDegreeName": "Sau Đại học"
-      },
-      "division": {
-        "id": 2,
-        "divisionName": "Hành chính"
-      },
-      "id": 27
+      "id": 1
     }
   ],
   "position": [
@@ -185,17 +93,17 @@
       "rentTypeCost": "1000000"
     },
     {
-      "id": 1,
+      "id": 2,
       "rentTypeName": "Month",
       "rentTypeCost": "500000"
     },
     {
-      "id": 1,
+      "id": 3,
       "rentTypeName": "Day",
       "rentTypeCost": "200000"
     },
     {
-      "id": 1,
+      "id": 4,
       "rentTypeName": "Hour",
       "rentTypeCost": "50000"
     }
@@ -266,6 +174,21 @@
       "customerEmail": "nhung@gmail.com",
       "customerAddress": "Nghệ An",
       "id": 4
+    },
+    {
+      "customerCode": "KH-9999",
+      "customerType": {
+        "id": 1,
+        "customerTypeName": "Diamond"
+      },
+      "customerName": "Minh",
+      "customerBirthday": "2021-08-28",
+      "customerGender": "0",
+      "customerIdCard": "111111111",
+      "customerPhone": "09011111111",
+      "customerEmail": "nhung@gmail",
+      "customerAddress": "Nghệ An",
+      "id": 5
     }
   ],
   "service": [
@@ -310,6 +233,27 @@
       "poolArea": "123",
       "numberOfFloor": "12",
       "id": 2
+    },
+    {
+      "serviceCode": "DV-0002",
+      "serviceName": "Vip3",
+      "serviceArea": "1",
+      "serviceCost": "2",
+      "serviceMaxPeople": "2",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Year",
+        "rentTypeCost": "1000000"
+      },
+      "serviceType": {
+        "id": 1,
+        "serviceTypeName": "Villa"
+      },
+      "standardRoom": "12",
+      "descriptionOtherConvenience": "12",
+      "poolArea": "12",
+      "numberOfFloor": "1",
+      "id": 3
     }
   ],
   "attachService": [
@@ -547,6 +491,204 @@
         "numberOfFloor": 10
       },
       "id": 3
+    },
+    {
+      "contractStartDate": "2021-08-27",
+      "contractEndDate": "2021-08-29",
+      "contractDeposit": "45",
+      "contractTotalMoney": "12",
+      "employee": {
+        "employeeCode": "123",
+        "employeeName": "Tình Tuyết",
+        "employeeBirthday": "2021-08-26",
+        "employeeIdCard": "12",
+        "employeeSalary": "1",
+        "employeePhone": "123",
+        "employeeEmail": "gđaaaaa",
+        "employeeAddress": "hi",
+        "position": {
+          "id": 4,
+          "positionName": "Giám sát"
+        },
+        "educationDegree": {
+          "id": 4,
+          "educationDegreeName": "Sau Đại học"
+        },
+        "division": {
+          "id": 1,
+          "divisionName": "Sale-Marketing"
+        },
+        "id": 13
+      },
+      "customer": {
+        "id": 1,
+        "customerCode": "KH-0000",
+        "customerType": {
+          "id": 4,
+          "customerTypeName": "Silver"
+        },
+        "customerName": "Tuyết",
+        "customerBirthday": "01/03/2000",
+        "customerGender": 1,
+        "customerIdCard": 123,
+        "customerPhone": 123,
+        "customerEmail": "abc",
+        "customerAddress": "xyz"
+      },
+      "service": {
+        "id": 1,
+        "serviceCode": "SV-0000",
+        "serviceName": "Vip1",
+        "serviceArea": 123,
+        "serviceCost": 123,
+        "serviceMaxPeople": 1,
+        "rentType": {
+          "id": 1,
+          "rentTypeName": "Year",
+          "rentTypeCost": "1000000"
+        },
+        "serviceType": {
+          "id": 1,
+          "serviceTypeName": "Villa"
+        },
+        "standardRoom": "1 sao",
+        "descriptionOtherConvenience": "không",
+        "poolArea": 20,
+        "numberOfFloor": 10
+      },
+      "id": 4
+    },
+    {
+      "contractStartDate": "2021-08-29",
+      "contractEndDate": "2021-08-28",
+      "contractDeposit": "12",
+      "contractTotalMoney": "12",
+      "employee": {
+        "employeeCode": "123",
+        "employeeName": "Tình Tuyết",
+        "employeeBirthday": "2021-08-26",
+        "employeeIdCard": "12",
+        "employeeSalary": "1",
+        "employeePhone": "123",
+        "employeeEmail": "gđaaaaa",
+        "employeeAddress": "hi",
+        "position": {
+          "id": 4,
+          "positionName": "Giám sát"
+        },
+        "educationDegree": {
+          "id": 4,
+          "educationDegreeName": "Sau Đại học"
+        },
+        "division": {
+          "id": 1,
+          "divisionName": "Sale-Marketing"
+        },
+        "id": 13
+      },
+      "customer": {
+        "id": 1,
+        "customerCode": "KH-0000",
+        "customerType": {
+          "id": 4,
+          "customerTypeName": "Silver"
+        },
+        "customerName": "Tuyết",
+        "customerBirthday": "01/03/2000",
+        "customerGender": 1,
+        "customerIdCard": 123,
+        "customerPhone": 123,
+        "customerEmail": "abc",
+        "customerAddress": "xyz"
+      },
+      "service": {
+        "id": 1,
+        "serviceCode": "SV-0000",
+        "serviceName": "Vip1",
+        "serviceArea": 123,
+        "serviceCost": 123,
+        "serviceMaxPeople": 1,
+        "rentType": {
+          "id": 1,
+          "rentTypeName": "Year",
+          "rentTypeCost": "1000000"
+        },
+        "serviceType": {
+          "id": 1,
+          "serviceTypeName": "Villa"
+        },
+        "standardRoom": "1 sao",
+        "descriptionOtherConvenience": "không",
+        "poolArea": 20,
+        "numberOfFloor": 10
+      },
+      "id": 5
+    },
+    {
+      "contractStartDate": "2021-08-28",
+      "contractEndDate": "2021-08-28",
+      "contractDeposit": "1",
+      "contractTotalMoney": "2",
+      "employee": {
+        "employeeCode": "123",
+        "employeeName": "Tình Tuyết",
+        "employeeBirthday": "2021-08-26",
+        "employeeIdCard": "12",
+        "employeeSalary": "1",
+        "employeePhone": "123",
+        "employeeEmail": "gđaaaaa",
+        "employeeAddress": "hi",
+        "position": {
+          "id": 4,
+          "positionName": "Giám sát"
+        },
+        "educationDegree": {
+          "id": 4,
+          "educationDegreeName": "Sau Đại học"
+        },
+        "division": {
+          "id": 1,
+          "divisionName": "Sale-Marketing"
+        },
+        "id": 13
+      },
+      "customer": {
+        "id": 1,
+        "customerCode": "KH-0000",
+        "customerType": {
+          "id": 4,
+          "customerTypeName": "Silver"
+        },
+        "customerName": "Tuyết",
+        "customerBirthday": "01/03/2000",
+        "customerGender": 1,
+        "customerIdCard": 123,
+        "customerPhone": 123,
+        "customerEmail": "abc",
+        "customerAddress": "xyz"
+      },
+      "service": {
+        "serviceCode": "DV-0000",
+        "serviceName": "Vip2",
+        "serviceArea": "12",
+        "serviceCost": "12",
+        "serviceMaxPeople": "6",
+        "rentType": {
+          "id": 1,
+          "rentTypeName": "Month",
+          "rentTypeCost": "500000"
+        },
+        "serviceType": {
+          "id": 2,
+          "serviceTypeName": "House"
+        },
+        "standardRoom": "tốt",
+        "descriptionOtherConvenience": "không",
+        "poolArea": "123",
+        "numberOfFloor": "12",
+        "id": 2
+      },
+      "id": 6
     }
   ],
   "contractDetail": [
@@ -703,6 +845,83 @@
       },
       "quantity": "1",
       "id": 2
+    },
+    {
+      "contract": {
+        "id": 1,
+        "contractStartDate": "22/08/2020",
+        "contractEndDate": "22/08/2021",
+        "contractDeposit": 123,
+        "contractTotalMoney": 1000000,
+        "employee": {
+          "employeeCode": "123",
+          "employeeName": "nhung",
+          "employeeBirthday": "2021-08-26",
+          "employeeIdCard": "12",
+          "employeeSalary": "1",
+          "employeePhone": "123",
+          "employeeEmail": "gđaaaaa",
+          "employeeAddress": "hi",
+          "position": {
+            "id": 1,
+            "positionName": "Lễ Tân"
+          },
+          "educationDegree": {
+            "id": 1,
+            "educationDegreeName": "Trung cấp"
+          },
+          "division": {
+            "id": 1,
+            "divisionName": "Sale-Marketing"
+          },
+          "id": 13
+        },
+        "customer": {
+          "id": 1,
+          "customerCode": "KH-0000",
+          "customerType": {
+            "id": 4,
+            "customerTypeName": "Silver"
+          },
+          "customerName": "Tuyết",
+          "customerBirthday": "01/03/2000",
+          "customerGender": 1,
+          "customerIdCard": 123,
+          "customerPhone": 123,
+          "customerEmail": "abc",
+          "customerAddress": "xyz"
+        },
+        "service": {
+          "id": 1,
+          "serviceCode": "SV-0000",
+          "serviceName": "Vip1",
+          "serviceArea": 123,
+          "serviceCost": 123,
+          "serviceMaxPeople": 1,
+          "rentType": {
+            "id": 1,
+            "rentTypeName": "Year",
+            "rentTypeCost": "1000000"
+          },
+          "serviceType": {
+            "id": 1,
+            "serviceTypeName": "Villa"
+          },
+          "standardRoom": "1 sao",
+          "descriptionOtherConvenience": "không",
+          "poolArea": 20,
+          "numberOfFloor": 10
+        }
+      },
+      "attachService": {
+        "id": 1,
+        "attachServiceName": "Massage",
+        "attachServiceCost": 100000,
+        "attachServiceUnit": 1,
+        "attachServiceStatus": "empty"
+      },
+      "quantity": "3",
+      "id": 3
     }
   ]
 }

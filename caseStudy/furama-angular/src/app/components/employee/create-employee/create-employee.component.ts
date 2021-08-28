@@ -8,6 +8,7 @@ import {PositionService} from '../../../services/position.service';
 import {IPosition} from '../../../model/position';
 import {IEducationDegree} from '../../../model/educationDegree';
 import {IDivision} from '../../../model/division';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-employee',
@@ -24,7 +25,7 @@ export class CreateEmployeeComponent implements OnInit {
               public divisionList: DivisionService,
               public educationDegreeService: EducationDegreeService,
               public positionService: PositionService,
-              public router: Router) {
+              public router: Router, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -37,6 +38,7 @@ export class CreateEmployeeComponent implements OnInit {
     this.employeeService.createNewEmployee(this.employeeForm.value).subscribe(data => {
       console.log(this.employeeForm.value);
       this.router.navigateByUrl('/employee-list');
+      this.toastr.success('Thanks!', 'Create new Employee successfully !');
     });
   }
 
@@ -45,9 +47,9 @@ export class CreateEmployeeComponent implements OnInit {
       employeeCode: new FormControl('', [Validators.required, Validators.pattern('^NV-\\d{4}$')]),
       employeeName: new FormControl('', [Validators.required]),
       employeeBirthday: new FormControl('', [Validators.required]),
-      employeeIdCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}|\\d{12}$')]),
-      employeeSalary: new FormControl('', [Validators.required]),
-      employeePhone: new FormControl('', [Validators.required, Validators.pattern('^090\\d{7}|\\(84\\)\\+90\\d{7}|091\\d{7}|\\(84\\)\\+91\\d{7}$')]),
+      employeeIdCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}$|^\\d{12}$')]),
+      employeeSalary: new FormControl('', [Validators.required, Validators.min(0)]),
+      employeePhone: new FormControl('', [Validators.required, Validators.pattern('^090\\d{7}$|^\\(84\\)\\+90\\d{7}$|^091\\d{7}$|^\\(84\\)\\+91\\d{7}$')]),
       employeeEmail: new FormControl('', [Validators.required, Validators.email]),
       employeeAddress: new FormControl('', [Validators.required]),
       position: new FormControl('', [Validators.required]),
