@@ -29,4 +29,12 @@ export class TodoService {
   edit(todo, todoId): Observable<Todo> {
     return this.http.put<Todo>(this.API + '/' + todoId, todo).pipe();
   }
+
+  search(keyword): Observable<Todo[]> {
+    return this.http.get<Todo[]>(this.API + '?content_like=' + keyword);
+  }
+
+  sortByContent(): Observable<Todo[]> {
+    return this.http.get<Todo[]>(this.API + '?_sort=content');
+  }
 }

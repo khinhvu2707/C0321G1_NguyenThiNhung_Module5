@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {TodoService} from '../todo.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-todo-edit',
@@ -14,7 +14,7 @@ export class TodoEditComponent implements OnInit {
   public todoId: number;
 
   constructor(public todoService: TodoService, public activatedRoute: ActivatedRoute,
-              public router: Router, public matSnackBar: MatSnackBar) {
+              public router: Router, public toastr: ToastrService) {
   }
 
 
@@ -40,7 +40,7 @@ export class TodoEditComponent implements OnInit {
   edit() {
     this.todoService.edit(this.todoForm.value, this.todoId).subscribe(data => {
       this.router.navigateByUrl('/list');
-      this.matSnackBar.open('Edit success!');
+      this.toastr.success('Thanks!', 'Edit successfully !');
     });
   }
 }

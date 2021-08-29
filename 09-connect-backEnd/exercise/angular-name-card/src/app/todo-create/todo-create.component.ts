@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {TodoService} from '../todo.service';
 import {Router} from '@angular/router';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-todo-create',
@@ -12,7 +12,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class TodoCreateComponent implements OnInit {
   public todoForm: FormGroup;
 
-  constructor(public todoService: TodoService, public router: Router, public matSnackBar: MatSnackBar) {
+  constructor(public todoService: TodoService, public router: Router, public toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class TodoCreateComponent implements OnInit {
   create() {
     this.todoService.create(this.todoForm.value).subscribe(data => {
       this.router.navigateByUrl('/list');
-      this.matSnackBar.open('Create success!');
+      this.toastr.success('Thanks!', 'Create successfully !');
     });
   }
 }

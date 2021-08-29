@@ -14,6 +14,8 @@ import {Router} from '@angular/router';
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
   content = new FormControl();
+  private termName: string;
+  private p: number;
 
   constructor(public todoService: TodoService, public dialog: MatDialog, public router: Router) {
   }
@@ -31,7 +33,7 @@ export class TodoComponent implements OnInit {
 
   toggleTodo(i: number) {
     const todo = this.todos[i];
-    todo.complete =  !todo.complete;
+    todo.complete = !todo.complete;
     this.todoService.edit(this.todos[i], this.todos[i].id).subscribe(next => {
       this.todos[i].complete = next.complete;
     });
@@ -51,6 +53,20 @@ export class TodoComponent implements OnInit {
         console.log('The dialog was closed');
         this.ngOnInit();
       });
+    });
+  }
+
+  search() {
+    this.todoService.search(this.termName).subscribe(data => {
+      this.todos = data;
+      this.p = 1;
+    });
+  }
+
+  sort() {
+    this.todoService.sortByContent().subscribe(data => {
+      this.todos = data;
+      this.p = 1;
     });
   }
 
