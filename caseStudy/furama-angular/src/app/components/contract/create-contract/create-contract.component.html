@@ -12,7 +12,7 @@
         <div
           *ngIf="!contractForm.controls.contractStartDate?.valid && (contractForm.controls.contractStartDate?.dirty
            ||contractForm.controls.contractStartDate?.touched)">
-          Start Date is not valid
+          <p style="color: red">Start Date is not valid</p>
         </div>
         <label class="col-md-4 control-label ">End Date</label>
         <div class="input-group mb-3">
@@ -22,7 +22,7 @@
         <div
           *ngIf="!contractForm.controls.contractEndDate?.valid && (contractForm.controls.contractEndDate?.dirty
            ||contractForm.controls.contractEndDate?.touched)">
-          End Date is not valid
+          <p style="color: red">End Date is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Deposit</label>
         <div class="input-group mb-3">
@@ -30,9 +30,13 @@
           <input formControlName="contractDeposit" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contractForm.controls.contractDeposit?.valid && (contractForm.controls.contractDeposit?.dirty
-           ||contractForm.controls.contractDeposit?.touched)">
-          Deposit is not valid
+          *ngIf="!contractForm.controls.contractDeposit?.valid && (contractForm.controls.contractDeposit?.dirty || contractForm.controls.contractDeposit?.touched)">
+          <div [hidden]="!contractForm.controls.contractDeposit.errors.required">
+            <p style="color: red">Deposit is required!</p>
+          </div>
+          <div [hidden]="!contractForm.controls.contractDeposit.errors.min">
+            <p style="color: red">Deposit is not valid ( >=0 ) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Total Money</label>
         <div class="input-group mb-3">
@@ -40,9 +44,13 @@
           <input formControlName="contractTotalMoney" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contractForm.controls.contractTotalMoney?.valid && (contractForm.controls.contractTotalMoney?.dirty
-           ||contractForm.controls.contractTotalMoney?.touched)">
-          Total Money is not valid
+          *ngIf="!contractForm.controls.contractTotalMoney?.valid && (contractForm.controls.contractTotalMoney?.dirty || contractForm.controls.contractTotalMoney?.touched)">
+          <div [hidden]="!contractForm.controls.contractTotalMoney.errors.required">
+            <p style="color: red">Total Money is required!</p>
+          </div>
+          <div [hidden]="!contractForm.controls.contractTotalMoney.errors.min">
+            <p style="color: red">Total Money is not valid ( >=0 ) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Employee</label>
         <div class="input-group mb-3">
@@ -54,7 +62,7 @@
         <div
           *ngIf="!contractForm.controls.contractStartDate?.valid && (contractForm.controls.contractStartDate?.dirty
            ||contractForm.controls.contractStartDate?.touched)">
-          Employee is not valid
+          <p style="color: red">Employee is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer</label>
         <div class="input-group mb-3">
@@ -66,7 +74,7 @@
         <div
           *ngIf="!contractForm.controls.contractStartDate?.valid && (contractForm.controls.contractStartDate?.dirty
            ||contractForm.controls.contractStartDate?.touched)">
-          Customer is not valid
+          <p style="color: red">Customer is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Service</label>
         <div class="input-group mb-3">
@@ -78,14 +86,14 @@
         <div
           *ngIf="!contractForm.controls.contractStartDate?.valid && (contractForm.controls.contractStartDate?.dirty
            ||contractForm.controls.contractStartDate?.touched)">
-          Service is not valid
+          <p style="color: red">Service is not valid</p>
         </div>
       </div>
       <hr>
       <div class="row table-responsive">
         <div class="col-1"></div>
         <div class="col-9">
-          <button [routerLink]="['/contract-detail-list']" type="button" class="btn m-2" style="background-color: #9EDEED">
+          <button [routerLink]="['/contract-list']" type="button" class="btn m-2" style="background-color: #9EDEED">
             Back to List Contract
           </button>
         </div>

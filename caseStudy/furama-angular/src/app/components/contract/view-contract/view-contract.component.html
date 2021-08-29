@@ -9,46 +9,40 @@
         <div class="col-md-6">
           <div class="card-body">
             <table style="text-align: center;width: 90%">
-              <tr><h5 class="card-title" style="text-align: center">Nhung</h5></tr>
-              <tr>
-                <td><img src="assets/image/icon.gif"></td>
-                <td>Start Date :</td>
-                <td></td>
+              <tr *ngFor="let co of contract">
+                <td style="width: 20%"><img src="assets/image/icon.gif"></td>
+                <td style="width: 40%">Start Date :</td>
+                <td>{{co.contractStartDate | date}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let co of contract">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>End Date:</td>
-                <td></td>
+                <td>{{co.contractEndDate | date}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let co of contract">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Deposit:</td>
-                <td></td>
+                <td>{{co.contractDeposit}}</td>
               </tr>
-              <tr>
-                <td><img src="assets/image/icon.gif"></td>
-                <td>List Attach Service:</td>
-                <td></td>
-              </tr>
-              <tr>
+              <tr *ngFor="let co of contract">
                 <td><img src="assets/image/icon3.gif"></td>
                 <td>Total Money:</td>
-                <td></td>
+                <td>{{co.contractTotalMoney}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let co of contract">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Employee:</td>
-                <td></td>
+                <td>{{co.employee.employeeName}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let co of contract">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Customer:</td>
-                <td></td>
+                <td>{{co.customer.customerName}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let co of contract">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Service:</td>
-                <td></td>
+                <td>{{co.service.serviceName}}</td>
               </tr>
             </table>
           </div>

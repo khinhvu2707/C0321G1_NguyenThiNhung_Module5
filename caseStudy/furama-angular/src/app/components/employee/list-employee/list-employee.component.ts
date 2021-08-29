@@ -13,6 +13,7 @@ export class ListEmployeeComponent implements OnInit {
   employees: IEmployee[] = [];
   p: string | number;
   term: any;
+  termName: any;
 
   constructor(public employeeList: EmployeeService,
               public dialog: MatDialog) {
@@ -41,5 +42,18 @@ export class ListEmployeeComponent implements OnInit {
     });
   }
 
+  searchByName() {
+    this.employeeList.search(this.termName).subscribe(data => {
+      this.employees = data;
+      this.p = 1;
+    });
+  }
+
+  sortByName() {
+    this.employeeList.sortByName().subscribe(data => {
+      this.employees = data;
+      this.p = 1;
+    });
+  }
 }
 

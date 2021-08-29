@@ -36,7 +36,7 @@
       <td>{{contract.customer.customerName}}</td>
       <td>{{contract.service.serviceName}}</td>
       <td>{{contract.contractTotalMoney}}</td>
-      <td style="text-align: center"><a [routerLink]="['/contract-edit']">
+      <td style="text-align: center"><a [routerLink]="['/contract-edit',contract.id]">
         <button type="button" class="btn" style="background-color: #FADEED">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
                viewBox="0 0 16 16">
@@ -47,7 +47,7 @@
         </button>
       </a></td>
       <td style="text-align: center">
-        <button type="button" class="btn" style="background-color: #CBEDE3" data-toggle="modal"
+        <button (click)="openDialog(contract.id)" type="button" class="btn" style="background-color: #CBEDE3" data-toggle="modal"
                 data-target="#exampleModal">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser"
                viewBox="0 0 16 16">
@@ -57,7 +57,7 @@
           Delete
         </button>
       </td>
-      <td style="text-align: center"><a [routerLink]="['/contract-view']">
+      <td style="text-align: center"><a [routerLink]="['/contract-view',contract.id]">
         <button type="button" class="btn" style="background-color: #9EDEED">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book"
                viewBox="0 0 16 16">

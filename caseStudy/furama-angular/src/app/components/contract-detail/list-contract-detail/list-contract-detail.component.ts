@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {IContractDetail} from '../../../model/contractDetail';
 import {ContractDetailService} from '../../../services/contract-detail.service';
 import {MatDialog} from '@angular/material/dialog';
+import {DialogContractDetailComponent} from '../dialog-contract-detail/dialog-contract-detail.component';
 
 @Component({
   selector: 'app-list-contract-detail',
@@ -24,21 +25,21 @@ export class ListContractDetailComponent implements OnInit {
     });
   }
 
-  // openDialog(id: any): void {
-  //   console.log(id);
-  //   this.serviceService.getEmployeeById(id).subscribe(dataDialog => {
-  //     console.log(dataDialog);
-  //     const dialogRef = this.dialog.open(DialogEmployeeComponent, {
-  //       width: '500px',
-  //       data: {name: dataDialog},
-  //       disableClose: true
-  //     });
-  //
-  //     dialogRef.afterClosed().subscribe(result => {
-  //       console.log('The dialog was closed');
-  //       this.ngOnInit();
-  //     });
-  //   });
-  // }
+  openDialog(id: any): void {
+    console.log(id);
+    this.contractDetailService.getContractDetailById(id).subscribe(dataDialog => {
+      console.log(dataDialog);
+      const dialogRef = this.dialog.open(DialogContractDetailComponent, {
+        width: '500px',
+        data: {name: dataDialog},
+        disableClose: true
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        this.ngOnInit();
+      });
+    });
+  }
 
 }

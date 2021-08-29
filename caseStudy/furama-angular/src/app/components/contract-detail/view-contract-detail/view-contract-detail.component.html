@@ -9,21 +9,20 @@
         <div class="col-md-6">
           <div class="card-body">
             <table style="text-align: center;width: 90%">
-              <tr><h5 class="card-title" style="text-align: center">Nhung</h5></tr>
-              <tr>
-                <td style="width: 10%"><img src="assets/image/icon3.gif"></td>
-                <td>Contract :</td>
-                <td>27/07</td>
+              <tr *ngFor="let cd of contractDetail">
+                <td style="width: 20%"><img src="assets/image/icon.gif"></td>
+                <td style="width: 40%">Contract :</td>
+                <td>{{cd.contract.id}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let cd of contractDetail">
                 <td style="width: 10%"><img src="assets/image/icon3.gif"></td>
                 <td>Attach Service :</td>
-                <td>Nghệ An</td>
+                <td>{{cd.attachService.attachServiceName}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let cd of contractDetail">
                 <td style="width: 10%"><img src="assets/image/icon3.gif"></td>
                 <td>Quantity :</td>
-                <td>Nghệ An</td>
+                <td>{{cd.quantity}}</td>
               </tr>
             </table>
           </div>

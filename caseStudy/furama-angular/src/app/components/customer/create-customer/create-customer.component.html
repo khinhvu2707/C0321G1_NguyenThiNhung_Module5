@@ -11,9 +11,13 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!customerForm.controls.customerCode?.valid && (customerForm.controls.customerCode?.dirty
-           ||customerForm.controls.customerCode?.touched)">
-          Customer Code is not valid
+          *ngIf="!customerForm.controls.customerCode?.valid && (customerForm.controls.customerCode?.dirty || customerForm.controls.customerCode?.touched)">
+          <div [hidden]="!customerForm.controls.customerCode.errors.required">
+            <p style="color: red">Customer Code is required!</p>
+          </div>
+          <div [hidden]="!customerForm.controls.customerCode.errors.pattern">
+            <p style="color: red">Customer Code is not valid ( KH-xxxx ) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Customer Type</label>
         <div class="input-group mb-3">
@@ -25,7 +29,7 @@
         <div
           *ngIf="!customerForm.controls.customerType?.valid && (customerForm.controls.customerType?.dirty
            ||customerForm.controls.customerType?.touched)">
-          Customer Type is not valid
+          <p style="color: red">Customer Type is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer Name</label>
         <div class="input-group mb-3">
@@ -36,7 +40,7 @@
         <div
           *ngIf="!customerForm.controls.customerName?.valid && (customerForm.controls.customerName?.dirty
            ||customerForm.controls.customerName?.touched)">
-          Name is not valid
+          <p style="color: red">Name is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer Birthday</label>
         <div class="input-group mb-3">
@@ -47,7 +51,7 @@
         <div
           *ngIf="!customerForm.controls.customerBirthday?.valid && (customerForm.controls.customerBirthday?.dirty
            ||customerForm.controls.customerBirthday?.touched)">
-          Birthday is not valid
+          <p style="color: red">Birthday is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer Gender</label>
         <div class="input-group mb-3">
@@ -60,7 +64,7 @@
         <div
           *ngIf="!customerForm.controls.customerGender?.valid && (customerForm.controls.customerGender?.dirty
            ||customerForm.controls.customerGender?.touched)">
-          Gender is not valid
+          <p style="color: red">Gender is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer Id Card</label>
         <div class="input-group mb-3">
@@ -69,9 +73,13 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!customerForm.controls.customerIdCard?.valid && (customerForm.controls.customerIdCard?.dirty
-           ||customerForm.controls.customerIdCard?.touched)">
-          Id Card is not valid
+          *ngIf="!customerForm.controls.customerIdCard?.valid && (customerForm.controls.customerIdCard?.dirty || customerForm.controls.customerIdCard?.touched)">
+          <div [hidden]="!customerForm.controls.customerIdCard.errors.required">
+            <p style="color: red">Id Card is required!</p>
+          </div>
+          <div [hidden]="!customerForm.controls.customerIdCard.errors.pattern">
+            <p style="color: red">Id Card is not valid ( 9 or 12 number ) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Customer Phone</label>
         <div class="input-group mb-3">
@@ -80,9 +88,13 @@
                  aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!customerForm.controls.customerPhone?.valid && (customerForm.controls.customerPhone?.dirty
-           ||customerForm.controls.customerPhone?.touched)">
-          Phone is not valid
+          *ngIf="!customerForm.controls.customerPhone?.valid && (customerForm.controls.customerPhone?.dirty || customerForm.controls.customerPhone?.touched)">
+          <div [hidden]="!customerForm.controls.customerPhone.errors.required">
+            <p style="color: red">Customer Phone is required!</p>
+          </div>
+          <div [hidden]="!customerForm.controls.customerPhone.errors.pattern">
+            <p style="color: red">Customer Phone is not valid ( 090xxxxxxx-(84)+90xxxxxxx-091xxxxxxx-(84)+91xxxxxxx ) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Customer Email</label>
         <div class="input-group mb-3">
@@ -93,7 +105,7 @@
         <div
           *ngIf="!customerForm.controls.customerEmail?.valid && (customerForm.controls.customerEmail?.dirty
            ||customerForm.controls.customerEmail?.touched)">
-          Email is not valid
+          <p style="color: red">Email is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer Address</label>
         <div class="input-group mb-3">
@@ -104,7 +116,7 @@
         <div
           *ngIf="!customerForm.controls.customerAddress?.valid && (customerForm.controls.customerAddress?.dirty
            ||customerForm.controls.customerAddress?.touched)">
-          Address is not valid
+          <p style="color: red">Address is not valid</p>
         </div>
       </div>
       <hr>

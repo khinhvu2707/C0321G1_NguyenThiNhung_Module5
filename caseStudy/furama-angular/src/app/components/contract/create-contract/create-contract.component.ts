@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../../../services/customer.service';
 import {Router} from '@angular/router';
@@ -49,8 +49,8 @@ export class CreateContractComponent implements OnInit {
     this.contractForm = new FormGroup({
       contractStartDate: new FormControl('', [Validators.required]),
       contractEndDate: new FormControl('', [Validators.required]),
-      contractDeposit: new FormControl('', [Validators.required]),
-      contractTotalMoney: new FormControl('', [Validators.required]),
+      contractDeposit: new FormControl('', [Validators.required, Validators.min(0)]),
+      contractTotalMoney: new FormControl('', [Validators.required, Validators.min(0)]),
       employee: new FormControl('', [Validators.required]),
       customer: new FormControl('', [Validators.required]),
       service: new FormControl('', [Validators.required])
@@ -62,11 +62,13 @@ export class CreateContractComponent implements OnInit {
       this.employees = data;
     });
   }
+
   getAllCustomer() {
     this.customerService.getAllCustomer().subscribe(data => {
       this.customers = data;
     });
   }
+
   getAllService() {
     this.serviceService.getAllService().subscribe(data => {
       this.services = data;

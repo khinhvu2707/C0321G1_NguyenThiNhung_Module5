@@ -3,52 +3,56 @@
   <div>
     <div class="card mb-3 rounded-3" style="width: 70%;margin:20px 15%">
       <div class="row no-gutters">
-        <div class="col-md-6">
+        <div class="col-md-5">
           <img src="assets/image/hoa4.jpg" style="width: 100%">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
           <div class="card-body">
             <table style="text-align: center;width: 90%">
-              <tr><h5 class="card-title" style="text-align: center">Nhung</h5></tr>
-              <tr>
-                <td><img src="assets/image/icon.gif"></td>
-                <td>Customer Code:</td>
-                <td></td>
+              <tr *ngFor="let cus of customer">
+                <td style="width: 20%"><img src="assets/image/icon.gif"></td>
+                <td style="width: 40%">Customer Code :</td>
+                <td>{{cus.customerCode}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let cus of customer">
+                <td><img src="assets/image/icon.gif"></td>
+                <td>Customer Name:</td>
+                <td>{{cus.customerName}}</td>
+              </tr>
+              <tr *ngFor="let cus of customer">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Customer Type:</td>
-                <td></td>
+                <td>{{cus.customerType.customerTypeName}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let cus of customer">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Customer Birthday:</td>
-                <td></td>
+                <td>{{cus.customerBirthday | date}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let cus of customer">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Customer Gender:</td>
-                <td></td>
+                <td>{{cus.customerGender == 1? "Male" : "Female"}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let cus of customer">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Customer Id Card:</td>
-                <td></td>
+                <td>{{cus.customerIdCard}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let cus of customer">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Customer Phone:</td>
-                <td></td>
+                <td>{{cus.customerPhone}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let cus of customer">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Customer Email:</td>
-                <td></td>
+                <td>{{cus.customerEmail}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let cus of customer">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Customer Address:</td>
-                <td></td>
+                <td>{{cus.customerAddress}}</td>
               </tr>
             </table>
           </div>

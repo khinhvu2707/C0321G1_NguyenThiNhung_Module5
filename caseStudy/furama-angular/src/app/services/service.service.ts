@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {IService} from '../model/service';
@@ -15,6 +15,10 @@ export class ServiceService {
 
   getAllService(): Observable<IService[]> {
     return this.http.get<IService[]>(this.API).pipe();
+  }
+
+  getServiceById(id): Observable<IService[]> {
+    return this.http.get<IService[]>(this.API + '/' + id).pipe();
   }
 
   deleteService(id): Observable<any> {

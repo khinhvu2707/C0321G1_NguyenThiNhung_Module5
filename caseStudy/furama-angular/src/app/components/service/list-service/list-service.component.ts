@@ -3,6 +3,7 @@ import {IService} from '../../../model/service';
 import {ServiceService} from '../../../services/service.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogEmployeeComponent} from '../../employee/dialog-employee/dialog-employee.component';
+import {DialogServiceComponent} from '../dialog-service/dialog-service.component';
 
 @Component({
   selector: 'app-list-service',
@@ -25,21 +26,21 @@ export class ListServiceComponent implements OnInit {
     });
   }
 
-  // openDialog(id: any): void {
-  //   console.log(id);
-  //   this.serviceService.getEmployeeById(id).subscribe(dataDialog => {
-  //     console.log(dataDialog);
-  //     const dialogRef = this.dialog.open(DialogEmployeeComponent, {
-  //       width: '500px',
-  //       data: {name: dataDialog},
-  //       disableClose: true
-  //     });
-  //
-  //     dialogRef.afterClosed().subscribe(result => {
-  //       console.log('The dialog was closed');
-  //       this.ngOnInit();
-  //     });
-  //   });
-  // }
+  openDialog(id: any): void {
+    console.log(id);
+    this.serviceService.getServiceById(id).subscribe(dataDialog => {
+      console.log(dataDialog);
+      const dialogRef = this.dialog.open(DialogServiceComponent, {
+        width: '500px',
+        data: {name: dataDialog},
+        disableClose: true
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        this.ngOnInit();
+      });
+    });
+  }
 
 }

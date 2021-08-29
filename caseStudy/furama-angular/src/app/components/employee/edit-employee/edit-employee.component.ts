@@ -50,9 +50,9 @@ export class EditEmployeeComponent implements OnInit {
       employeeCode: new FormControl('', [Validators.required, Validators.pattern('^NV-\\d{4}$')]),
       employeeName: new FormControl('', [Validators.required]),
       employeeBirthday: new FormControl('', [Validators.required]),
-      employeeIdCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}|\\d{12}$')]),
+      employeeIdCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}$|^\\d{12}$')]),
       employeeSalary: new FormControl('', [Validators.required]),
-      employeePhone: new FormControl('', [Validators.required, Validators.pattern('^090\\d{7}|\\(84\\)\\+90\\d{7}|091\\d{7}|\\(84\\)\\+91\\d{7}$')]),
+      employeePhone: new FormControl('', [Validators.required, Validators.pattern('^090\\d{7}$|^\\(84\\)\\+90\\d{7}$|^091\\d{7}$|^\\(84\\)\\+91\\d{7}$')]),
       employeeEmail: new FormControl('', [Validators.required]),
       employeeAddress: new FormControl('', [Validators.required]),
       position: new FormControl('', [Validators.required]),
@@ -77,7 +77,7 @@ export class EditEmployeeComponent implements OnInit {
   editEmployee() {
     this.employeeService.editEmployee(this.employeeForm.value, this.employeeId).subscribe(data => {
       this.router.navigateByUrl('/employee-list');
-      this.toastr.success('Thanks!', 'Edit new Employee successfully !');
+      this.toastr.success('Thanks!', 'Edit Employee successfully !');
     });
   }
 

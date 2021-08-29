@@ -18,7 +18,7 @@
               <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Birthday :</td>
-                <td>{{employee.employeeBirthday}}</td>
+                <td>{{employee.employeeBirthday | date}}</td>
               </tr>
               <tr *ngFor="let employee of employees">
                 <td><img src="assets/image/icon.gif"></td>

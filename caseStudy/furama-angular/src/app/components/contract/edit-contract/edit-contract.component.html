@@ -1,6 +1,5 @@
 <div class="mt-3 mb-3">
-  <form method="post">
-    <input name="id" type="hidden">
+  <form [formGroup]="contractForm" novalidate>
     <div class="alert" role="alert" style="margin: 0 7%;background-color: #E8E7F5">
       <h4 class="alert-heading" style="text-align: center">Please enter the information below !</h4>
       <hr>
@@ -8,64 +7,109 @@
         <label class="col-md-4 control-label ">Start Date</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
-                 aria-describedby="button-addon1">
+          <input formControlName="contractStartDate" type="date" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!contractForm.controls.contractStartDate?.valid && (contractForm.controls.contractStartDate?.dirty
+           ||contractForm.controls.contractStartDate?.touched)">
+          <p style="color: red">Start Date is not valid</p>
         </div>
         <label class="col-md-4 control-label ">End Date</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
-                 aria-describedby="button-addon1">
+          <input formControlName="contractEndDate" type="date" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!contractForm.controls.contractEndDate?.valid && (contractForm.controls.contractEndDate?.dirty
+           ||contractForm.controls.contractEndDate?.touched)">
+          <p style="color: red">End Date is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Deposit</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
-                 aria-describedby="button-addon1">
+          <input formControlName="contractDeposit" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!contractForm.controls.contractDeposit?.valid && (contractForm.controls.contractDeposit?.dirty || contractForm.controls.contractDeposit?.touched)">
+          <div [hidden]="!contractForm.controls.contractDeposit.errors.required">
+            <p style="color: red">Deposit is required!</p>
+          </div>
+          <div [hidden]="!contractForm.controls.contractDeposit.errors.min">
+            <p style="color: red">Deposit is not valid ( >=0 ) !</p>
+          </div>
+        </div>
+        <label class="col-md-4 control-label ">Total Money</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon.gif"></span>
+          <input formControlName="contractTotalMoney" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!contractForm.controls.contractTotalMoney?.valid && (contractForm.controls.contractTotalMoney?.dirty || contractForm.controls.contractTotalMoney?.touched)">
+          <div [hidden]="!contractForm.controls.contractTotalMoney.errors.required">
+            <p style="color: red">Total Money is required!</p>
+          </div>
+          <div [hidden]="!contractForm.controls.contractTotalMoney.errors.min">
+            <p style="color: red">Total Money is not valid ( >=0 ) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Employee</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon.gif"></span>
-          <select class="form-select" id="inputGroupSelect01">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select [compareWith]="compareFn" formControlName="employee" class="form-select" id="inputGroupSelect01">
+            <option *ngFor="let item of employees" [ngValue]="item">{{item.employeeName}}</option>
           </select>
+        </div>
+        <div
+          *ngIf="!contractForm.controls.contractStartDate?.valid && (contractForm.controls.contractStartDate?.dirty
+           ||contractForm.controls.contractStartDate?.touched)">
+          <p style="color: red">Employee is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon.gif"></span>
-          <select class="form-select" id="inputGroupSelect02">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select [compareWith]="compareFn" formControlName="customer" class="form-select" id="inputGroupSelect02">
+            <option *ngFor="let item of customers" [ngValue]="item">{{item.customerName}}</option>
           </select>
+        </div>
+        <div
+          *ngIf="!contractForm.controls.contractStartDate?.valid && (contractForm.controls.contractStartDate?.dirty
+           ||contractForm.controls.contractStartDate?.touched)">
+          <p style="color: red">Customer is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Service</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon.gif"></span>
-          <select class="form-select" id="inputGroupSelect03">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select [compareWith]="compareFn" formControlName="service" class="form-select" id="inputGroupSelect03">
+            <option *ngFor="let item of services" [ngValue]="item">{{item.serviceName}}</option>
           </select>
+        </div>
+        <div
+          *ngIf="!contractForm.controls.contractStartDate?.valid && (contractForm.controls.contractStartDate?.dirty
+           ||contractForm.controls.contractStartDate?.touched)">
+          <p style="color: red">Service is not valid</p>
         </div>
       </div>
       <hr>
       <div class="row table-responsive">
-        <div class="col-10"></div>
+        <div class="col-1"></div>
+        <div class="col-9">
+          <button [routerLink]="['/contract-list']" type="button" class="btn m-2" style="background-color: #9EDEED">
+            Back to List Contract
+          </button>
+        </div>
         <div class="col-2">
-          <button type="submit" class="btn m-2" style="background-color: #9EDEED">Edit
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-cursor" viewBox="0 3 16 16">
+          <button (click)="edit()" type="submit" class="btn m-2" style="background-color: #8ADA9E"
+                  [disabled]="!contractForm.valid">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor"
+                 viewBox="0 0 16 16">
               <path
                 d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52 2.25 8.184z"/>
             </svg>
+            Create
           </button>
         </div>
       </div>
     </div>
   </form>
 </div>
+

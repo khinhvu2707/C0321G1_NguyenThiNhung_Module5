@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {IContractDetail} from '../model/contractDetail';
@@ -15,6 +15,10 @@ export class ContractDetailService {
 
   getAllContractDetail(): Observable<IContractDetail[]> {
     return this.http.get<IContractDetail[]>(this.API).pipe();
+  }
+
+  getContractDetailById(id): Observable<IContractDetail[]> {
+    return this.http.get<IContractDetail[]>(this.API + '/' + id).pipe();
   }
 
   deleteContractDetail(id): Observable<any> {

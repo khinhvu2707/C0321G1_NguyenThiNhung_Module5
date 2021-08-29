@@ -5,6 +5,7 @@ import {CustomerTypeService} from '../../../services/customer-type.service';
 import {Router} from '@angular/router';
 import {ICustomerType} from '../../../model/customerType';
 import {ToastrService} from 'ngx-toastr';
+import {ICustomer} from '../../../model/customer';
 
 @Component({
   selector: 'app-create-customer',
@@ -14,6 +15,8 @@ import {ToastrService} from 'ngx-toastr';
 export class CreateCustomerComponent implements OnInit {
   public customerForm: FormGroup;
   public customerType: ICustomerType[] = [];
+  private gender: number;
+  private customers: ICustomer[] = [];
 
   constructor(public customerService: CustomerService,
               public customerTypeList: CustomerTypeService,
@@ -25,8 +28,19 @@ export class CreateCustomerComponent implements OnInit {
     this.getAllData();
   }
 
+  getAllData() {
+    this.customerTypeList.getAllCustomerType().subscribe(data => {
+      this.customerType = data;
+    });
+    this.customerService.getAllCustomer().subscribe(data => {
+      this.customers = data;
+      console.log(this.customers);
+    });
+  }
 
   onSubmit() {
+    this.gender = Number(this.customerForm.value.customerGender);
+    this.customerForm.value.customerGender = this.gender;
     this.customerService.createNewCustomer(this.customerForm.value).subscribe(data => {
       console.log(this.customerForm.value);
       this.router.navigateByUrl('/customer-list');
@@ -41,16 +55,11 @@ export class CreateCustomerComponent implements OnInit {
       customerName: new FormControl('', [Validators.required]),
       customerBirthday: new FormControl('', [Validators.required]),
       customerGender: new FormControl('', [Validators.required]),
-      customerIdCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}|\\d{12}$')]),
-      customerPhone: new FormControl('', [Validators.required, Validators.pattern('^090\\d{7}|(84)90\\d{7}|091\\d{7}|(84)91\\d{7}$')]),
+      customerIdCard: new FormControl('', [Validators.required, Validators.pattern('^\\d{9}$|^\\d{12}$')]),
+      customerPhone: new FormControl('', [Validators.required, Validators.pattern('^090\\d{7}$|^\\(84\\)\\+90\\d{7}$|^091\\d{7}$|^\\(84\\)\\+91\\d{7}$')]),
       customerEmail: new FormControl('', [Validators.required, Validators.email]),
       customerAddress: new FormControl('', [Validators.required]),
     });
   }
 
-  getAllData() {
-    this.customerTypeList.getAllCustomerType().subscribe(data => {
-      this.customerType = data;
-    });
-  }
 }

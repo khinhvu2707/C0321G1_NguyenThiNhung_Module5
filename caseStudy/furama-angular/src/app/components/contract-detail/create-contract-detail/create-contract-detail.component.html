@@ -14,7 +14,7 @@
         <div
           *ngIf="!contractDetailForm.controls.contract?.valid && (contractDetailForm.controls.contract?.dirty
            ||contractDetailForm.controls.contract?.touched)">
-          Contract is not valid
+          <p style="color: red">Contract is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Attach Service</label>
         <div class="input-group mb-3">
@@ -26,7 +26,7 @@
         <div
           *ngIf="!contractDetailForm.controls.attachService?.valid && (contractDetailForm.controls.attachService?.dirty
            ||contractDetailForm.controls.attachService?.touched)">
-          Attach Service is not valid
+          <p style="color: red">Attach Service is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Quantity</label>
         <div class="input-group mb-3">
@@ -34,9 +34,13 @@
           <input formControlName="quantity" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
         </div>
         <div
-          *ngIf="!contractDetailForm.controls.quantity?.valid && (contractDetailForm.controls.quantity?.dirty
-           ||contractDetailForm.controls.quantity?.touched)">
-          Service is not valid
+          *ngIf="!contractDetailForm.controls.quantity?.valid && (contractDetailForm.controls.quantity?.dirty || contractDetailForm.controls.quantity?.touched)">
+          <div [hidden]="!contractDetailForm.controls.quantity.errors.required">
+            <p style="color: red">Quantity is required!</p>
+          </div>
+          <div [hidden]="!contractDetailForm.controls.quantity.errors.min">
+            <p style="color: red">Quantity is not valid (>=1) !</p>
+          </div>
         </div>
       </div>
       <hr>

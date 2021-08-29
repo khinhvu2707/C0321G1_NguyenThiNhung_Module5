@@ -43,15 +43,15 @@ export class CreateServiceComponent implements OnInit {
     this.serviceForm = new FormGroup({
       serviceCode: new FormControl('', [Validators.required, Validators.pattern('^DV-\\d{4}$')]),
       serviceName: new FormControl('', [Validators.required]),
-      serviceArea: new FormControl('', [Validators.required]),
-      serviceCost: new FormControl('', [Validators.required]),
-      serviceMaxPeople: new FormControl('', [Validators.required]),
+      serviceArea: new FormControl('', [Validators.required, Validators.min(0)]),
+      serviceCost: new FormControl('', [Validators.required, Validators.min(0)]),
+      serviceMaxPeople: new FormControl('', [Validators.required, Validators.min(0)]),
       rentType: new FormControl('', [Validators.required]),
       serviceType: new FormControl('', [Validators.required]),
       standardRoom: new FormControl('', [Validators.required]),
       descriptionOtherConvenience: new FormControl('', [Validators.required]),
-      poolArea: new FormControl('', [Validators.required]),
-      numberOfFloor: new FormControl('', [Validators.required])
+      poolArea: new FormControl('', [Validators.required, Validators.min(0)]),
+      numberOfFloor: new FormControl('', [Validators.required, Validators.min(0)])
     });
   }
 

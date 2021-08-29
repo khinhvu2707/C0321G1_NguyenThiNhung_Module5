@@ -1,7 +1,7 @@
 <div class="alert mt-3 table-responsive" role="alert" style="background-color: #E8E7F5">
   <h4 class="alert-heading">Information Service : </h4>
   <div>
-    <div class="card mb-3 rounded-3" style="width: 70%;margin:20px 15%">
+    <div class="card mb-3 rounded-3" style="width: 90%;margin-left: 5%">
       <div class="row no-gutters">
         <div class="col-md-6">
           <img src="assets/image/furama12.jpg" style="width: 100%">
@@ -9,56 +9,60 @@
         <div class="col-md-6">
           <div class="card-body">
             <table style="text-align: center;width: 90%">
-              <tr><h5 class="card-title" style="text-align: center">Nhung</h5></tr>
-              <tr>
-                <td><img src="assets/image/icon.gif"></td>
-                <td>Service Code:</td>
-                <td></td>
+              <tr *ngFor="let service of services">
+                <td style="width: 20%"><img src="assets/image/icon.gif"></td>
+                <td style="width: 40%">Service Code :</td>
+                <td>{{service.serviceCode}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let service of services">
+                <td><img src="assets/image/icon.gif"></td>
+                <td>Service Name:</td>
+                <td>{{service.serviceName}}</td>
+              </tr>
+              <tr *ngFor="let service of services">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Service Area:</td>
-                <td></td>
+                <td>{{service.serviceArea}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let service of services">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Cost:</td>
-                <td></td>
+              <td>{{service.serviceCost}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let service of services">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Max People:</td>
-                <td></td>
+                <td>{{service.serviceMaxPeople}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let service of services">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Rent Type:</td>
-                <td></td>
+                <td>{{service.rentType.rentTypeName}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let service of services">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Service Type:</td>
-                <td></td>
+                <td>{{service.serviceType.serviceTypeName}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let service of services">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Standard Room:</td>
-                <td></td>
+                <td>{{service.standardRoom}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let service of services">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Description Other Convenience:</td>
-                <td></td>
+                <td>{{service.descriptionOtherConvenience}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let service of services">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Pool Area:</td>
-                <td></td>
+                <td>{{service.poolArea}}</td>
               </tr>
-              <tr>
+              <tr *ngFor="let service of services">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>Number Of Floor:</td>
-                <td></td>
+                <td>{{service.numberOfFloor}}</td>
               </tr>
             </table>
           </div>

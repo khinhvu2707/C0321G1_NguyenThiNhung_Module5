@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ICustomer} from '../model/customer';
+import {IEmployee} from '../model/employee';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,10 @@ export class CustomerService {
 
   getAllCustomer(): Observable<ICustomer[]> {
     return this.http.get<ICustomer[]>(this.API).pipe();
+  }
+
+  getCustomerById(id): Observable<ICustomer[]> {
+    return this.http.get<ICustomer[]>(this.API + '/' + id).pipe();
   }
 
   deleteCustomer(id): Observable<any> {

@@ -1,6 +1,5 @@
 <div class="mt-3 mb-3">
-  <form method="post">
-    <input name="id" type="hidden">
+  <form [formGroup]="customerForm" novalidate>
     <div class="alert" role="alert" style="margin: 0 7%;background-color: #E8E7F5">
       <h4 class="alert-heading" style="text-align: center">Please enter the information below !</h4>
       <hr>
@@ -8,73 +7,135 @@
         <label class="col-md-4 control-label ">Customer Code</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="customerCode" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!customerForm.controls.customerCode?.valid && (customerForm.controls.customerCode?.dirty || customerForm.controls.customerCode?.touched)">
+          <div [hidden]="!customerForm.controls.customerCode.errors.required">
+            <p style="color: red">Customer Code is required!</p>
+          </div>
+          <div [hidden]="!customerForm.controls.customerCode.errors.pattern">
+            <p style="color: red">Customer Code is not valid ( KH-xxxx ) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Customer Type</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <select class="form-select" id="inputGroupSelect01">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select [compareWith]="compareFn" formControlName="customerType" class="form-select" id="inputGroupSelect03">
+            <option *ngFor="let item of customerType" [ngValue]="item">{{item.customerTypeName}}</option>
           </select>
+        </div>
+        <div
+          *ngIf="!customerForm.controls.customerType?.valid && (customerForm.controls.customerType?.dirty
+           ||customerForm.controls.customerType?.touched)">
+          <p style="color: red">Customer Type is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer Name</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="customerName" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!customerForm.controls.customerName?.valid && (customerForm.controls.customerName?.dirty
+           ||customerForm.controls.customerName?.touched)">
+          <p style="color: red">Name is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer Birthday</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="customerBirthday" type="date" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!customerForm.controls.customerBirthday?.valid && (customerForm.controls.customerBirthday?.dirty
+           ||customerForm.controls.customerBirthday?.touched)">
+          <p style="color: red">Birthday is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer Gender</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <select class="form-select" id="inputGroupSelect02">
+          <select formControlName="customerGender" class="form-select" id="inputGroupSelect02">
             <option value="0">Male</option>
             <option value="1">Female</option>
           </select>
         </div>
+        <div
+          *ngIf="!customerForm.controls.customerGender?.valid && (customerForm.controls.customerGender?.dirty
+           ||customerForm.controls.customerGender?.touched)">
+          <p style="color: red">Gender is not valid</p>
+        </div>
         <label class="col-md-4 control-label ">Customer Id Card</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="customerIdCard" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!customerForm.controls.customerIdCard?.valid && (customerForm.controls.customerIdCard?.dirty || customerForm.controls.customerIdCard?.touched)">
+          <div [hidden]="!customerForm.controls.customerIdCard.errors.required">
+            <p style="color: red">Id Card is required!</p>
+          </div>
+          <div [hidden]="!customerForm.controls.customerIdCard.errors.pattern">
+            <p style="color: red">Id Card is not valid ( 9 or 12 number ) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Customer Phone</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="customerPhone" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!customerForm.controls.customerPhone?.valid && (customerForm.controls.customerPhone?.dirty || customerForm.controls.customerPhone?.touched)">
+          <div [hidden]="!customerForm.controls.customerPhone.errors.required">
+            <p style="color: red">Customer Phone is required!</p>
+          </div>
+          <div [hidden]="!customerForm.controls.customerPhone.errors.pattern">
+            <p style="color: red">Customer Phone is not valid ( 090xxxxxxx-(84)+90xxxxxxx-091xxxxxxx-(84)+91xxxxxxx ) !</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Customer Email</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="customerEmail" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!customerForm.controls.customerEmail?.valid && (customerForm.controls.customerEmail?.dirty
+           ||customerForm.controls.customerEmail?.touched)">
+          <p style="color: red">Email is not valid</p>
         </div>
         <label class="col-md-4 control-label ">Customer Address</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon2.gif"></span>
-          <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
+          <input formControlName="customerAddress" type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                  aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!customerForm.controls.customerAddress?.valid && (customerForm.controls.customerAddress?.dirty
+           ||customerForm.controls.customerAddress?.touched)">
+          <p style="color: red">Address is not valid</p>
         </div>
       </div>
       <hr>
       <div class="row table-responsive">
-        <div class="col-10"></div>
+        <div class="col-1"></div>
+        <div class="col-9">
+          <button [routerLink]="['/customer-list']" type="button" class="btn m-2" style="background-color: #9EDEED">
+            Back to List Customer
+          </button>
+        </div>
         <div class="col-2">
-          <button type="submit" class="btn m-2" style="background-color: #9EDEED">Edit
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-cursor" viewBox="0 3 16 16">
+          <button (click)="edit()" type="submit" class="btn m-2" style="background-color: #8ADA9E"
+                  [disabled]="!customerForm.valid">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor"
+                 viewBox="0 0 16 16">
               <path
                 d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52 2.25 8.184z"/>
             </svg>
+            Edit
           </button>
         </div>
       </div>

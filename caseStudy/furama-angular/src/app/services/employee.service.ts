@@ -31,4 +31,12 @@ export class EmployeeService {
   editEmployee(employee, employeeId): Observable<IEmployee> {
     return this.http.put<IEmployee>(this.API + '/' + employeeId, employee).pipe();
   }
+
+  search(keyword): Observable<IEmployee[]> {
+    return this.http.get<IEmployee[]>(this.API + '?employeeName_like=' + keyword);
+  }
+
+  sortByName(): Observable<IEmployee[]> {
+    return this.http.get<IEmployee[]>(this.API + '?_sort=employeeName');
+  }
 }
