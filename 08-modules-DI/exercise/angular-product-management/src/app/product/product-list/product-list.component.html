@@ -1,5 +1,5 @@
 <h1>Danh sách sản phẩm</h1>
-<a routerLink="/product/create"><button>Create</button></a>
+<a routerLink="/product/create">Tạo mới sản phẩm</a>
 <table>
   <tr>
     <td>STT</td>
@@ -13,7 +13,7 @@
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
-    <td><a [routerLink]="['/product/edit',product.id]"><button>Edit</button></a></td>
-    <td><a [routerLink]="['/product/delete',product.id]"><button>Delete</button></a></td>
+    <td><a [routerLink]="['/product/edit',product.id]">Edit</a></td>
+    <td><a [routerLink]="['/product/delete',product.id]">Delete</a></td>
   </tr>
 </table>

@@ -49,4 +49,5 @@ export class RegisterComponent implements OnInit {
     const value = abstractControl.value;
     return value.password === value.confirmPassword ? null : {passwordsNotEqual: true};
   }
+
 }

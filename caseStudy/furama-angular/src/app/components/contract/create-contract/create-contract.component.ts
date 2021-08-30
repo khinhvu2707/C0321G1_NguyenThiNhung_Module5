@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerService} from '../../../services/customer.service';
 import {Router} from '@angular/router';
 import {IEmployee} from '../../../model/employee';
@@ -47,10 +47,12 @@ export class CreateContractComponent implements OnInit {
 
   initfrom() {
     this.contractForm = new FormGroup({
-      contractStartDate: new FormControl('', [Validators.required]),
-      contractEndDate: new FormControl('', [Validators.required]),
-      contractDeposit: new FormControl('', [Validators.required, Validators.min(0)]),
-      contractTotalMoney: new FormControl('', [Validators.required, Validators.min(0)]),
+      contractDate: new FormGroup({
+        contractStartDate: new FormControl('', [Validators.required]),
+        contractEndDate: new FormControl('', [Validators.required]),
+      }, this.checkDate),
+      contractDeposit: new FormControl('', [Validators.required, Validators.min(1)]),
+      contractTotalMoney: new FormControl('', [Validators.required, Validators.min(1)]),
       employee: new FormControl('', [Validators.required]),
       customer: new FormControl('', [Validators.required]),
       service: new FormControl('', [Validators.required])
@@ -73,5 +75,11 @@ export class CreateContractComponent implements OnInit {
     this.serviceService.getAllService().subscribe(data => {
       this.services = data;
     });
+  }
+
+  checkDate(abstractControl: AbstractControl): any {
+   const star = new Date(abstractControl.value.contractStartDate);
+   const end = new Date(abstractControl.value.contractEndDate);
+   return star <= end ? null : {errorCode: true};
   }
 }

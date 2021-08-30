@@ -12,12 +12,12 @@
               <tr *ngFor="let co of contract">
                 <td style="width: 20%"><img src="assets/image/icon.gif"></td>
                 <td style="width: 40%">Start Date :</td>
-                <td>{{co.contractStartDate | date}}</td>
+                <td>{{co.contractDate.contractStartDate | date}}</td>
               </tr>
               <tr *ngFor="let co of contract">
                 <td><img src="assets/image/icon.gif"></td>
                 <td>End Date:</td>
-                <td>{{co.contractEndDate | date}}</td>
+                <td>{{co.contractDate.contractEndDate | date}}</td>
               </tr>
               <tr *ngFor="let co of contract">
                 <td><img src="assets/image/icon.gif"></td>

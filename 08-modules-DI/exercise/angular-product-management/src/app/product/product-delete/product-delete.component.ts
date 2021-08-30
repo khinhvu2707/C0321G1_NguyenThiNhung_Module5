@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, ParamMap, Router} from '@angular/router';
-import {ProductService} from '../../service/product.service';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {ProductService} from '../../service/product.service';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 @Component({
   selector: 'app-product-delete',
@@ -39,5 +39,4 @@ export class ProductDeleteComponent implements OnInit {
     this.productService.deleteProduct(id);
     this.router.navigate(['/product/list']);
   }
-
 }

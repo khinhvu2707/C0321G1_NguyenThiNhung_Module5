@@ -4,8 +4,7 @@ import {IEmployee} from './employee';
 
 export interface IContract {
   id: number;
-  contractStartDate: string;
-  contractEndDate: string;
+  contractDate: string;
   contractDeposit: number;
   contractTotalMoney: number;
   employee: IEmployee;

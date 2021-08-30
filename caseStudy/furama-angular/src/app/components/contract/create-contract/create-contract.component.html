@@ -4,30 +4,37 @@
       <h4 class="alert-heading" style="text-align: center">Please enter the information below !</h4>
       <hr>
       <div style="margin: 0 7%">
-        <label class="col-md-4 control-label ">Start Date</label>
-        <div class="input-group mb-3">
-          <span class="input-group-text"><img src="assets/image/icon.gif"></span>
-          <input formControlName="contractStartDate" type="date" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-        </div>
-        <div
-          *ngIf="!contractForm.controls.contractStartDate?.valid && (contractForm.controls.contractStartDate?.dirty
-           ||contractForm.controls.contractStartDate?.touched)">
-          <p style="color: red">Start Date is not valid</p>
-        </div>
-        <label class="col-md-4 control-label ">End Date</label>
-        <div class="input-group mb-3">
-          <span class="input-group-text"><img src="assets/image/icon.gif"></span>
-          <input formControlName="contractEndDate" type="date" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-        </div>
-        <div
-          *ngIf="!contractForm.controls.contractEndDate?.valid && (contractForm.controls.contractEndDate?.dirty
-           ||contractForm.controls.contractEndDate?.touched)">
-          <p style="color: red">End Date is not valid</p>
+        <div formGroupName="contractDate">
+          <label class="col-md-4 control-label ">Start Date</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text"><img src="assets/image/icon.gif"></span>
+            <input formControlName="contractStartDate" type="date" class="form-control" placeholder=""
+                   aria-label="Example text with button addon" aria-describedby="button-addon1">
+          </div>
+          <div
+            *ngIf="!contractForm.get('contractDate').get('contractStartDate')?.valid && (contractForm.get('contractDate').get('contractStartDate').dirty || (contractForm.get('contractDate').get('contractStartDate').touched))">
+            <p style="color: red">Start Date is not valid</p>
+          </div>
+          <label class="col-md-4 control-label ">End Date</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text"><img src="assets/image/icon.gif"></span>
+            <input formControlName="contractEndDate" type="date" class="form-control" placeholder=""
+                   aria-label="Example text with button addon" aria-describedby="button-addon1">
+          </div>
+          <div
+            *ngIf="!contractForm.get('contractDate').get('contractEndDate')?.valid && (contractForm.get('contractDate').get('contractEndDate').dirty || (contractForm.get('contractDate').get('contractEndDate').touched))">
+            <p style="color: red">End Date is required !</p>
+          </div>
+          <div
+            *ngIf="contractForm.hasError('errorCode', ['contractDate']) && (contractForm.get('contractDate').get('contractEndDate').dirty || (contractForm.get('contractDate').get('contractEndDate').touched))">
+            <p style="color: red">Not Valid!</p>
+          </div>
         </div>
         <label class="col-md-4 control-label ">Deposit</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon.gif"></span>
-          <input formControlName="contractDeposit" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+          <input formControlName="contractDeposit" type="text" class="form-control" placeholder=""
+                 aria-label="Example text with button addon" aria-describedby="button-addon1">
         </div>
         <div
           *ngIf="!contractForm.controls.contractDeposit?.valid && (contractForm.controls.contractDeposit?.dirty || contractForm.controls.contractDeposit?.touched)">
@@ -35,13 +42,14 @@
             <p style="color: red">Deposit is required!</p>
           </div>
           <div [hidden]="!contractForm.controls.contractDeposit.errors.min">
-            <p style="color: red">Deposit is not valid ( >=0 ) !</p>
+            <p style="color: red">Deposit is not valid ( >0 ) !</p>
           </div>
         </div>
         <label class="col-md-4 control-label ">Total Money</label>
         <div class="input-group mb-3">
           <span class="input-group-text"><img src="assets/image/icon.gif"></span>
-          <input formControlName="contractTotalMoney" type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+          <input formControlName="contractTotalMoney" type="text" class="form-control" placeholder=""
+                 aria-label="Example text with button addon" aria-describedby="button-addon1">
         </div>
         <div
           *ngIf="!contractForm.controls.contractTotalMoney?.valid && (contractForm.controls.contractTotalMoney?.dirty || contractForm.controls.contractTotalMoney?.touched)">
@@ -49,7 +57,7 @@
             <p style="color: red">Total Money is required!</p>
           </div>
           <div [hidden]="!contractForm.controls.contractTotalMoney.errors.min">
-            <p style="color: red">Total Money is not valid ( >=0 ) !</p>
+            <p style="color: red">Total Money is not valid ( >0 ) !</p>
           </div>
         </div>
         <label class="col-md-4 control-label ">Employee</label>
