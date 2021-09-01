@@ -35,7 +35,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let customer of customers |filter:term | paginate: { itemsPerPage: 5, currentPage: p },let i=index ">
-      <th>{{i+1}}</th>
+      <td>{{p*5+i-4}}</td>
       <td>{{customer.customerCode}}</td>
       <td>{{customer.customerType.customerTypeName}}</td>
       <td>{{customer.customerName}}</td>

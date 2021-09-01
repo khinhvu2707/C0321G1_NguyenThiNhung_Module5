@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {EmployeeService} from '../../../services/employee.service';
 import {ContractService} from '../../../services/contract.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-dialog-contract',
@@ -15,7 +16,7 @@ export class DialogContractComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<DialogContractComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public contractService: ContractService) {
+    public contractService: ContractService , public toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class DialogContractComponent implements OnInit {
   deleteContract() {
     this.contractService.deleteContract(this.contractId).subscribe(dataDialog => {
       this.dialogRef.close();
+      this.toastr.warning('Thanks!', 'Delete Contract successfully !');
     });
   }
 }

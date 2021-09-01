@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {IService} from '../../../model/service';
 import {ServiceService} from '../../../services/service.service';
 import {MatDialog} from '@angular/material/dialog';
-import {DialogEmployeeComponent} from '../../employee/dialog-employee/dialog-employee.component';
 import {DialogServiceComponent} from '../dialog-service/dialog-service.component';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-service',
@@ -13,7 +13,7 @@ import {DialogServiceComponent} from '../dialog-service/dialog-service.component
 export class ListServiceComponent implements OnInit {
 
   services: IService[] = [];
-  p: string | number;
+  p = 1;
   term: any;
 
   constructor(public serviceService: ServiceService,

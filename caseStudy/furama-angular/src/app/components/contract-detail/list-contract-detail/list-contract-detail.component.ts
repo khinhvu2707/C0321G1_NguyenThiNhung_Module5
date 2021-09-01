@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IContractDetail} from '../../../model/contractDetail';
 import {ContractDetailService} from '../../../services/contract-detail.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogContractDetailComponent} from '../dialog-contract-detail/dialog-contract-detail.component';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-contract-detail',
@@ -12,7 +13,7 @@ import {DialogContractDetailComponent} from '../dialog-contract-detail/dialog-co
 export class ListContractDetailComponent implements OnInit {
 
   contractDetails: IContractDetail[] = [];
-  p: string | number;
+  p = 1;
   term: any;
 
   constructor(public contractDetailService: ContractDetailService,

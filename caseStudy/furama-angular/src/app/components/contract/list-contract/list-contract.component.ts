@@ -12,7 +12,7 @@ import {DialogContractComponent} from '../dialog-contract/dialog-contract.compon
 export class ListContractComponent implements OnInit {
 
   contracts: IContract[] = [];
-  p: string | number;
+  p = 1 ;
   term: any;
 
   constructor(public contractService: ContractService,

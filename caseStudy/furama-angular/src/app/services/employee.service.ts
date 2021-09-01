@@ -36,6 +36,10 @@ export class EmployeeService {
     return this.http.get<IEmployee[]>(this.API + '?employeeName_like=' + keyword);
   }
 
+  searchByCode(keyword): Observable<IEmployee[]> {
+    return this.http.get<IEmployee[]>(this.API + '?employeeCode=' + keyword);
+  }
+
   sortByName(): Observable<IEmployee[]> {
     return this.http.get<IEmployee[]>(this.API + '?_sort=employeeName');
   }

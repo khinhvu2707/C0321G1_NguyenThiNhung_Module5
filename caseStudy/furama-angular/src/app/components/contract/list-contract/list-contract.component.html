@@ -32,7 +32,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let contract of contracts |filter:term | paginate: { itemsPerPage: 5, currentPage: p },let i=index ">
-      <th>{{i + 1}}</th>
+      <td>{{p*5+i-4}}</td>
       <td>{{contract.customer.customerName}}</td>
       <td>{{contract.service.serviceName}}</td>
       <td>{{contract.contractTotalMoney}}</td>

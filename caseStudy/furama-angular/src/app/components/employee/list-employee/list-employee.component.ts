@@ -11,9 +11,9 @@ import {DialogEmployeeComponent} from '../dialog-employee/dialog-employee.compon
 })
 export class ListEmployeeComponent implements OnInit {
   employees: IEmployee[] = [];
-  p: string | number;
-  term: any;
-  termName: any;
+  p =1 ;
+  term = '';
+  termName = '';
 
   constructor(public employeeList: EmployeeService,
               public dialog: MatDialog) {

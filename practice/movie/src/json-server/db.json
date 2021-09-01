@@ -1,0 +1,142 @@
+{
+  "cinema": [
+    {
+      "id": 1,
+      "code": "CI-0000",
+      "movie": {
+        "id": 1,
+        "name": "Conan",
+        "category": "trinh thám"
+      },
+      "dateTime": "2020-08-08",
+      "ticket": 10
+    },
+    {
+      "code": "CI-1111",
+      "movie": {
+        "id": 2,
+        "name": "Sherlock Holmes",
+        "category": "trinh thám"
+      },
+      "dateTime": "2021-08-06",
+      "ticket": "4",
+      "id": 2
+    },
+    {
+      "code": "CI-0009",
+      "movie": {
+        "id": 2,
+        "name": "Sherlock Holmes",
+        "category": "trinh thám"
+      },
+      "dateTime": "2021-08-06",
+      "ticket": "4",
+      "id": 3
+    },
+    {
+      "code": "CI-1111",
+      "movie": {
+        "id": 3,
+        "name": "Harry Potter",
+        "category": "pháp thuật"
+      },
+      "dateTime": "2021-08-28",
+      "ticket": "8",
+      "id": 4
+    },
+    {
+      "code": "CI-1111",
+      "movie": {
+        "id": 1,
+        "name": "Conan",
+        "category": "trinh thám"
+      },
+      "dateTime": "2021-09-04",
+      "ticket": "8",
+      "id": 12
+    },
+    {
+      "code": "CI-0001",
+      "movie": {
+        "id": 2,
+        "name": "Sherlock Holmes",
+        "category": "trinh thám"
+      },
+      "dateTime": "2021-09-04",
+      "ticket": "9",
+      "id": 14
+    },
+    {
+      "code": "CI-0000",
+      "movie": {
+        "id": 1,
+        "name": "Conan",
+        "category": "trinh thám"
+      },
+      "dateTime": "2021-09-03",
+      "ticket": "9",
+      "id": 15
+    },
+    {
+      "code": "CI-0000",
+      "movie": {
+        "id": 1,
+        "name": "Conan",
+        "category": "trinh thám"
+      },
+      "dateTime": "2021-09-22",
+      "ticket": "9",
+      "id": 16
+    },
+    {
+      "code": "CI-0076",
+      "movie": {
+        "id": 1,
+        "name": "Conan",
+        "category": "trinh thám"
+      },
+      "dateTime": "2021-09-02",
+      "ticket": "9",
+      "id": 17
+    },
+    {
+      "code": "CI-0784",
+      "movie": {
+        "id": 1,
+        "name": "Conan",
+        "category": "trinh thám"
+      },
+      "dateTime": "2021-09-03",
+      "ticket": "9",
+      "id": 18
+    },
+    {
+      "code": "CI-0075",
+      "movie": {
+        "id": 1,
+        "name": "Conan",
+        "category": "trinh thám"
+      },
+      "dateTime": "2021-09-03",
+      "ticket": "2",
+      "id": 19
+    }
+  ],
+  "movie": [
+    {
+      "id": 1,
+      "name": "Conan",
+      "category": "trinh thám"
+    },
+    {
+      "id": 2,
+      "name": "Sherlock Holmes",
+      "category": "trinh thám"
+    },
+    {
+      "id": 3,
+      "name": "Harry Potter",
+      "category": "pháp thuật"
+    }
+  ]
+}

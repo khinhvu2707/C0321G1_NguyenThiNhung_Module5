@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {EmployeeService} from '../../../services/employee.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-dialog-employee',
@@ -14,7 +15,7 @@ export class DialogEmployeeComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<DialogEmployeeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public employeeList: EmployeeService) {
+    public employeeList: EmployeeService ,  public toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class DialogEmployeeComponent implements OnInit {
   deleteEmployee() {
     this.employeeList.deleteEmployee(this.employeeId).subscribe(dataDialog => {
       this.dialogRef.close();
+      this.toastr.warning('Thanks!', 'Delete Employee successfully !');
     });
   }
 }

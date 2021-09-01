@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ICustomer} from '../../../model/customer';
 import {CustomerService} from '../../../services/customer.service';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogCustomerComponent} from '../dialog-customer/dialog-customer.component';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-customer',
@@ -12,7 +13,7 @@ import {DialogCustomerComponent} from '../dialog-customer/dialog-customer.compon
 export class ListCustomerComponent implements OnInit {
 
   customers: ICustomer[] = [];
-  p: string | number;
+  p = 1;
   term: any;
 
   constructor(public customerService: CustomerService,

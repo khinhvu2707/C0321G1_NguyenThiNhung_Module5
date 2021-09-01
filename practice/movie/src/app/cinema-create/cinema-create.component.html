@@ -1,0 +1,52 @@
+<div style="margin:0 20%">
+  <form [formGroup]="cinemaForm" novalidate>
+    <label style="color: darkviolet">Code</label>
+    <input class="form-control" formControlName="code">
+    <div
+      *ngIf="!cinemaForm.controls.code?.valid && (cinemaForm.controls.code?.dirty || cinemaForm.controls.code?.touched)">
+      <div [hidden]="!cinemaForm.controls.code.errors.required">
+        <p style="color: red">Code is required!</p>
+      </div>
+      <div [hidden]="!cinemaForm.controls.code.errors.min">
+        <p style="color: red">Code is not valid (CI-xxxx) !</p>
+      </div>
+    </div>
+    <div>
+      <p style="color: red">{{message}}</p>
+    </div>
+    <label style="color: darkviolet">Movie</label>
+    <select formControlName="movie" class="form-select" >
+      <option *ngFor="let item of movies" [ngValue]="item">{{item.name}}</option>
+    </select>
+    <div
+      *ngIf="!cinemaForm.controls.movie?.valid && (cinemaForm.controls.movie?.dirty
+           ||cinemaForm.controls.movie?.touched)">
+      <p style="color: red">Movie is required!</p>
+    </div>
+    <label style="color: darkviolet">Date time</label>
+    <input class="form-control" formControlName="dateTime" type="date">
+    <div
+      *ngIf="!cinemaForm.controls.dateTime?.valid && (cinemaForm.controls.dateTime?.dirty || cinemaForm.controls.dateTime?.touched)">
+      <div [hidden]="!cinemaForm.controls.dateTime.errors.required">
+        <p style="color: red">DateTime is required!</p>
+      </div>
+    </div>
+    <div style="color: red" *ngIf="cinemaForm.controls.dateTime.hasError('errorCode')
+&& (cinemaForm.controls.dateTime?.dirty || cinemaForm.controls.dateTime?.touched)">
+      Not Valid!!!
+    </div>
+
+    <label style="color: darkviolet">Ticket</label>
+    <input class="form-control" formControlName="ticket">
+    <div
+      *ngIf="!cinemaForm.controls.ticket?.valid && (cinemaForm.controls.ticket?.dirty || cinemaForm.controls.ticket?.touched)">
+      <div [hidden]="!cinemaForm.controls.ticket.errors.required">
+        <p style="color: red">Ticket is required!</p>
+      </div>
+      <div [hidden]="!cinemaForm.controls.ticket.errors.min">
+        <p style="color: red">Ticket is not valid (>=1) !</p>
+      </div>
+    </div>
+    <button class="btn btn-warning mt-3" (click)="create()" [disabled]="!cinemaForm.valid">Create</button>
+  </form>
+</div>

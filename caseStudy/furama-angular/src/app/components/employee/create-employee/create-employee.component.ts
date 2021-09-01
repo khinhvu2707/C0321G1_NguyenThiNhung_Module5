@@ -9,6 +9,7 @@ import {IPosition} from '../../../model/position';
 import {IEducationDegree} from '../../../model/educationDegree';
 import {IDivision} from '../../../model/division';
 import {ToastrService} from 'ngx-toastr';
+import {IEmployee} from '../../../model/employee';
 
 @Component({
   selector: 'app-create-employee',
@@ -20,6 +21,9 @@ export class CreateEmployeeComponent implements OnInit {
   divisions: IDivision[] = [];
   educations: IEducationDegree[] = [];
   positions: IPosition[] = [];
+  employees: IEmployee[] = [];
+  employeesByCode: IEmployee[] = [];
+  message = '';
 
   constructor(public employeeService: EmployeeService,
               public divisionList: DivisionService,
@@ -35,11 +39,22 @@ export class CreateEmployeeComponent implements OnInit {
 
 
   onSubmit() {
-    this.employeeService.createNewEmployee(this.employeeForm.value).subscribe(data => {
-      console.log(this.employeeForm.value);
-      this.router.navigateByUrl('/employee-list');
-      this.toastr.success('Thanks!', 'Create new Employee successfully !');
+    this.employeeService.searchByCode(this.employeeForm.value.employeeCode).subscribe(data0 => {
+      this.employeesByCode = data0;
+      console.log(this.employeesByCode);
+      console.log(this.employeesByCode.length);
+      // tslint:disable-next-line:no-conditional-assignment
+      if (this.employeesByCode.length === 0 ) {
+        this.employeeService.createNewEmployee(this.employeeForm.value).subscribe(data => {
+          console.log(this.employeeForm.value);
+          this.router.navigateByUrl('/employee-list');
+          this.toastr.success('Thanks!', 'Create new Employee successfully !');
+        });
+      }
+      else {this.message = 'already exist';
+            console.log(this.message); }
     });
+
   }
 
   initfrom() {
@@ -67,6 +82,9 @@ export class CreateEmployeeComponent implements OnInit {
     });
     this.positionService.getAllPosition().subscribe(data => {
       this.positions = data;
+    });
+    this.employeeService.getAllEmployee().subscribe(data => {
+      this.employees = data;
     });
   }
 }

@@ -2,7 +2,7 @@
   "employees": [
     {
       "employeeCode": "NV-1111",
-      "employeeName": "Tuyết",
+      "employeeName": "Tuyết ",
       "employeeBirthday": "2021-08-26",
       "employeeIdCard": "111111111111",
       "employeeSalary": "11",
@@ -18,8 +18,8 @@
         "educationDegreeName": "Trung cấp"
       },
       "division": {
-        "id": 4,
-        "divisionName": "Quản lý"
+        "id": 2,
+        "divisionName": "Hành chính"
       },
       "id": 1
     },
@@ -68,6 +68,52 @@
         "divisionName": "Phục vụ"
       },
       "id": 3
+    },
+    {
+      "employeeCode": "NV-1111",
+      "employeeName": "Ni",
+      "employeeBirthday": "2021-08-27",
+      "employeeIdCard": "111111111",
+      "employeeSalary": "12",
+      "employeePhone": "0901111111",
+      "employeeEmail": "nhung@gmail.com",
+      "employeeAddress": "Nghệ An",
+      "position": {
+        "id": 2,
+        "positionName": "Phục Vụ"
+      },
+      "educationDegree": {
+        "id": 2,
+        "educationDegreeName": "Cao đẳng"
+      },
+      "division": {
+        "id": 1,
+        "divisionName": "Sale-Marketing"
+      },
+      "id": 4
+    },
+    {
+      "employeeCode": "NV-1111",
+      "employeeName": "n",
+      "employeeBirthday": "2021-08-27",
+      "employeeIdCard": "111111111",
+      "employeeSalary": "12",
+      "employeePhone": "0901111111",
+      "employeeEmail": "f@m",
+      "employeeAddress": "d",
+      "position": {
+        "id": 1,
+        "positionName": "Lễ Tân"
+      },
+      "educationDegree": {
+        "id": 1,
+        "educationDegreeName": "Trung cấp"
+      },
+      "division": {
+        "id": 1,
+        "divisionName": "Sale-Marketing"
+      },
+      "id": 6
     }
   ],
   "position": [
@@ -294,27 +340,6 @@
       "poolArea": "123",
       "numberOfFloor": "12",
       "id": 2
-    },
-    {
-      "serviceCode": "DV-0002",
-      "serviceName": "Vip3",
-      "serviceArea": "1",
-      "serviceCost": "2",
-      "serviceMaxPeople": "2",
-      "rentType": {
-        "id": 1,
-        "rentTypeName": "Year",
-        "rentTypeCost": "1000000"
-      },
-      "serviceType": {
-        "id": 1,
-        "serviceTypeName": "Villa"
-      },
-      "standardRoom": "12",
-      "descriptionOtherConvenience": "12",
-      "poolArea": "12",
-      "numberOfFloor": "1",
-      "id": 3
     }
   ],
   "attachService": [
