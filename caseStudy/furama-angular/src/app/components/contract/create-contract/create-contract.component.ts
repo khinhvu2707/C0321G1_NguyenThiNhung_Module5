@@ -49,7 +49,7 @@ export class CreateContractComponent implements OnInit {
     this.contractForm = new FormGroup({
       contractDate: new FormGroup({
         contractStartDate: new FormControl('', [Validators.required]),
-        contractEndDate: new FormControl('', [Validators.required, , this.check]),
+        contractEndDate: new FormControl('', [Validators.required]),
       }, this.checkDate),
       contractDeposit: new FormControl('', [Validators.required, Validators.min(1)]),
       contractTotalMoney: new FormControl('', [Validators.required, Validators.min(1)]),
