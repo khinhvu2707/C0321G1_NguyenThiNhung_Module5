@@ -1,0 +1,136 @@
+<div style="margin:15px 0">
+  <div class="alert alert-success" role="alert" style="margin: 0">
+    <h4 class="alert-heading" style="text-align: center">Please enter the information below !</h4>
+    <hr>
+    <div style="margin: 0 25%">
+      <form [formGroup]="STKForm" novalidate>
+        <div class="input-group mb-3">
+          <span class="input-group-text d-inline-block w-25">Mã khách hàng</span>
+          <input formControlName="maKhachHang" type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default" readonly>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text d-inline-block w-25">Khách hàng</span>
+          <input formControlName="tenKhachHang" type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div
+          *ngIf="!STKForm.controls.tenKhachHang?.valid && (STKForm.controls.tenKhachHang?.dirty || STKForm.controls.tenKhachHang?.touched)">
+          <div [hidden]="!STKForm.controls.tenKhachHang.errors.required">
+            <p style="color: red">Tên khách hàng không được để trống !</p>
+          </div>
+          <div [hidden]="!STKForm.controls.tenKhachHang.errors.pattern">
+            <p style="color: red">Tên khách hàng không được chứa kí tự số !</p>
+          </div>
+        </div>
+        <!--        <div formGroupName="thoiGian">-->
+        <label class="col-md-4 control-label ">Ngày mở sổ</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon.gif"></span>
+          <input formControlName="ngayMoSo" type="date" class="form-control" placeholder=""
+                 aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!STKForm.controls.ngayMoSo?.valid && (STKForm.controls.ngayMoSo?.dirty || STKForm.controls.ngayMoSo?.touched)">
+          <div [hidden]="!STKForm.controls.ngayMoSo.errors.required">
+            <p style="color: red">Ngày mở sổ không được để trống !</p>
+          </div>
+        </div>
+        <!--        <div-->
+        <!--          *ngIf="!STKForm.get('thoiGian').get('ngayMoSo')?.valid && (STKForm.get('thoiGian').get('ngayMoSo').dirty || (STKForm.get('thoiGian').get('ngayMoSo').touched))">-->
+        <!--          <p style="color: red">Ngày mở sổ không được để trống !</p>-->
+        <!--        </div>-->
+        <label class="col-md-4 control-label ">Ngày gửi</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><img src="assets/image/icon.gif"></span>
+          <input formControlName="ngayGui" type="date" class="form-control" placeholder=""
+                 aria-label="Example text with button addon" aria-describedby="button-addon1">
+        </div>
+        <div
+          *ngIf="!STKForm.controls.ngayGui?.valid && (STKForm.controls.ngayGui?.dirty || STKForm.controls.ngayGui?.touched)">
+          <div [hidden]="!STKForm.controls.ngayGui.errors.required">
+            <p style="color: red">Ngày gửi không được để trống</p>
+          </div>
+        </div>
+        <!--        <div-->
+        <!--          *ngIf="!STKForm.get('thoiGian').get('ngayGui')?.valid && (STKForm.get('thoiGian').get('ngayGui').dirty || (STKForm.get('thoiGian').get('ngayGui').touched))">-->
+        <!--          <div [hidden]="!STKForm.get('thoiGian').get('ngayGui').errors.required">-->
+        <!--            <p style="color: red">Ngày gửi không được để trống !</p>-->
+        <!--          </div>-->
+
+        <!--            <div-->
+        <!--              *ngIf="STKForm.hasError('errorCodeTime', ['thoiGian']) && (STKForm.get('thoiGian').get('ngayGui').dirty || (STKForm.get('thoiGian').get('ngayGui').touched))">-->
+        <!--              <p style="color: red">Ngày gửi phải cùng hoặc trước ngày hiện tại !</p>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--          <div-->
+        <!--            *ngIf="STKForm.hasError('errorCode', ['thoiGian']) && (STKForm.get('thoiGian').get('ngayGui').dirty || (STKForm.get('thoiGian').get('ngayGui').touched))">-->
+        <!--            <p style="color: red">Ngày gửi phải cùng hoặc trước ngày mở sổ !</p>-->
+        <!--          </div>-->
+        <!--        </div>-->
+
+        <div class="input-group mb-3">
+          <span class="input-group-text d-inline-block w-25">Kì hạn</span>
+          <select formControlName="kiHan" class="form-select">
+            <option value="3 tháng">3 tháng</option>
+            <option value="6 tháng">6 tháng</option>
+            <option value="1 năm">1 năm</option>
+            <option value="5 năm">5 năm</option>
+            <option value="không kì hạn">không kì hạn</option>
+          </select>
+        </div>
+        <div
+          *ngIf="!STKForm.controls.kiHan?.valid && (STKForm.controls.kiHan?.dirty
+           ||STKForm.controls.kiHan?.touched)">
+          <p style="color: red">Kì hạn không được để trống !</p>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text d-inline-block w-25">Số tiền gửi</span>
+          <input formControlName="soTienGui" type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div
+          *ngIf="!STKForm.controls.soTienGui?.valid && (STKForm.controls.soTienGui?.dirty || STKForm.controls.soTienGui?.touched)">
+          <div [hidden]="!STKForm.controls.soTienGui.errors.required">
+            <p style="color: red">Số tiền gửi không được để trống !</p>
+          </div>
+          <div [hidden]="!STKForm.controls.soTienGui.errors.min">
+            <p style="color: red">Số tiền gửi phải ít nhất là 10 triệu vnd !</p>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text d-inline-block w-25">Lãi suất</span>
+          <input formControlName="laiSuat" type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div
+          *ngIf="!STKForm.controls.laiSuat?.valid && (STKForm.controls.laiSuat?.dirty || STKForm.controls.laiSuat?.touched)">
+          <div [hidden]="!STKForm.controls.laiSuat.errors.required">
+            <p style="color: red">Lãi suất không được để trống</p>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text d-inline-block w-25">Ưu đãi</span>
+          <input formControlName="uuDai" type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div
+          *ngIf="!STKForm.controls.uuDai?.valid && (STKForm.controls.uuDai?.dirty || STKForm.controls.uuDai?.touched)">
+          <div [hidden]="!STKForm.controls.uuDai.errors.required">
+            <p style="color: red">Ưu đãi không được để trống</p>
+          </div>
+        </div>
+        <button class="btn btn-info mt-3" [routerLink]="['/list']">
+          Trở về
+        </button>
+        <button style="margin-left: 80%" class="btn btn-warning mt-3" (click)="edit()">
+          Sửa
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<
+
+
+
